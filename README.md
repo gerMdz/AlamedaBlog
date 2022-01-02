@@ -1,4 +1,5 @@
-Symfony Demo Application
+AlamedaBLOG
+BLog desde SymfonyDemo
 ========================
 
 The "Symfony Demo Application" is a reference application created to show how
