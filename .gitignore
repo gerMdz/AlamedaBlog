@@ -25,3 +25,5 @@ yarn-error.log
 ./.idea
 public/build
 
+/data/database.sqlite
+/data/database_test.sqlite
