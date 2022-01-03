@@ -56,7 +56,7 @@
             </trans-unit>
             <trans-unit id="title.homepage">
                 <source>title.homepage</source>
-                <target><![CDATA[Добре дошли в <strong>Symfony Demo</strong> приложението]]></target>
+                <target><![CDATA[Добре дошли в <strong>Blog</strong> приложението]]></target>
             </trans-unit>
             <trans-unit id="title.source_code">
                 <source>title.source_code</source>
@@ -348,11 +348,11 @@
             </trans-unit>
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo блог</target>
+                <target>Blog блог</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Най-новите публикации, публикувани на блога на Symfony Demo</target>
+                <target>Най-новите публикации, публикувани на блога на Blog</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

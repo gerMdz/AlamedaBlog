@@ -414,11 +414,11 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blog</target>
+                <target>Alameda Blog blog</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Symfony 示例博客上发布的最新文章</target>
+                <target>Alameda Blog 示例博客上发布的最新文章</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

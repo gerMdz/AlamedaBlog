@@ -57,7 +57,7 @@
             </trans-unit>
             <trans-unit id="title.homepage">
                 <source>title.homepage</source>
-                <target><![CDATA[Welkom bij de <strong>Symfony Demo</strong> applicatie]]></target>
+                <target><![CDATA[Welkom bij de <strong>Blog</strong> applicatie]]></target>
             </trans-unit>
             <trans-unit id="title.source_code">
                 <source>title.source_code</source>
@@ -357,11 +357,11 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Symfony Demo blog</target>
+                <target>BLoglog</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>De meest recente berichten, gepubliceerd op De Symfony Demo blog</target>
+                <target>De meest recente berichten, gepubliceerd op De Blog</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">

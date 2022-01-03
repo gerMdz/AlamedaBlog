@@ -58,7 +58,7 @@
 
             <trans-unit id="title.homepage">
                 <source>title.homepage</source>
-                <target><![CDATA[Bienvenido/a a la aplicación <strong>Symfony Demo</strong>]]></target>
+                <target><![CDATA[Bienvenido/a a la aplicación <strong>Alameda Blog</strong>]]></target>
             </trans-unit>
             <trans-unit id="title.source_code">
                 <source>title.source_code</source>
@@ -355,11 +355,11 @@
             </trans-unit>
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Blog de Symfony Demo</target>
+                <target>Blog de Alameda Blog</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
-                <target>Publicaciones más recientes publicadas en el blog de Symfony Demo</target>
+                <target>Publicaciones más recientes publicadas en el blog de Alameda Blog</target>
             </trans-unit>
 
             <trans-unit id="paginator.previous">
