@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>{% block title %}Alameda Blog application{% endblock %}</title>
+        <title>{% block title %}Alameda Blog {% endblock %}</title>
         <link rel="alternate" type="application/rss+xml" title="{{ 'rss.title'|trans }}" href="{{ path('blog_rss') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -105,19 +105,19 @@
         <div class="container body-container">
             {% block body %}
                 <div class="row">
-                    <div id="main" class="col-sm-9">
+                    <div id="main" class="col-sm-10">
                         {{ include('default/_flash_messages.html.twig') }}
 
                         {% block main %}{% endblock %}
                     </div>
 
-                    <div id="sidebar" class="col-sm-3">
+                    <div id="sidebar" class="col-sm-2">
                         {% block sidebar %}
-                            {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
-                                'template': 'blog/about.html.twig',
-                                'sharedAge': 600,
-                                '_locale': app.request.locale
-                            })) }}
+{#                            {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {#}
+{#                                'template': 'blog/about.html.twig',#}
+{#                                'sharedAge': 600,#}
+{#                                '_locale': app.request.locale#}
+{#                            })) }}#}
                         {% endblock %}
                     </div>
                 </div>
@@ -137,9 +137,9 @@
                                 <a href="https://www.facebook.com/IglesiaAlameda" title="Alameda Facebook">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://alameda.ar/blog/" title="Alameda Blog">
-                                    <i class="fa fa-rss" aria-hidden="true"></i>
-                                </a>
+{#                                <a href="https://alameda.ar/blog/" title="Alameda Blog">#}
+{#                                    <i class="fa fa-rss" aria-hidden="true"></i>#}
+{#                                </a>#}
                             </p>
                         </div>
                     </div>

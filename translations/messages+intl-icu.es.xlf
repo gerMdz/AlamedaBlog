@@ -370,6 +370,14 @@
                 <source>paginator.next</source>
                 <target>Siguiente</target>
             </trans-unit>
+            <trans-unit id="menu.user">
+                <source>menu.user</source>
+                <target>Cuenta</target>
+            </trans-unit>
+            <trans-unit id="paginator.current">
+                <source>paginator.current</source>
+                <target>(actual)</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
