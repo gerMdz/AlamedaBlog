@@ -1,6 +1,7 @@
 {
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.8.1",
+        "@popperjs/core": "^2.11.0",
         "@symfony/stimulus-bridge": "^2.0.0",
         "@symfony/webpack-encore": "^1.0.0",
         "bloodhound-js": "^1.2.3",
@@ -11,7 +12,7 @@
         "eonasdan-bootstrap-datetimepicker": "^4.17.47",
         "highlight.js": "^10.4.1",
         "imports-loader": "^0.8.0",
-        "jquery": "^3.5.1",
+        "jquery": "^3.6.0",
         "lato-font": "^3.0.0",
         "node-sass": "^4.9.3",
         "regenerator-runtime": "^0.13.2",
