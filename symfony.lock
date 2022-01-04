@@ -522,7 +522,7 @@
             "assets/controllers.json",
             "assets/controllers/hello_controller.js",
             "assets/app.js",
-            "assets/bootstrap.js",
+            "assets/stimulus-bridge.js",
             "config/packages/webpack_encore.yaml",
             "config/packages/test/webpack_encore.yaml",
             "config/packages/prod/webpack_encore.yaml",
