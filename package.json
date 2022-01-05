@@ -1,11 +1,12 @@
 {
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.8.1",
-        "@popperjs/core": "^2.11.0",
+        "@popperjs/core": "^2.11.2",
         "@symfony/stimulus-bridge": "^2.0.0",
         "@symfony/webpack-encore": "^1.0.0",
+        "autoprefixer": "^10.4.1",
         "bloodhound-js": "^1.2.3",
-        "bootstrap-sass": "^3.3.7",
+        "bootstrap-sass": "^3.4.1",
         "bootstrap-tagsinput": "^0.7.1",
         "bootswatch": "^3.3.7",
         "core-js": "^3.0.0",
@@ -15,6 +16,8 @@
         "jquery": "^3.6.0",
         "lato-font": "^3.0.0",
         "node-sass": "^4.9.3",
+        "popper.js": "^1.16.1",
+        "postcss-loader": "^6.2.1",
         "regenerator-runtime": "^0.13.2",
         "sass-loader": "^9.0.1",
         "stimulus": "^2.0.0",
