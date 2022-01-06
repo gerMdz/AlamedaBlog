@@ -378,6 +378,22 @@
                 <source>paginator.current</source>
                 <target>(actual)</target>
             </trans-unit>
+            <trans-unit id="help.post_summary">
+                <source>help.post_summary</source>
+                <target>Los resúmenes no pueden contener contenido HTML o Markdown; solo texto sin formato (texto plano).</target>
+            </trans-unit>
+            <trans-unit id="help.post_content">
+                <source>help.post_content</source>
+                <target>Utilice Markdown para formatear el contenido de la publicación del blog. HTML también está permitido.</target>
+            </trans-unit>
+            <trans-unit id="help.post_publication">
+                <source>help.post_publication</source>
+                <target>Establezca la fecha en el futuro para programar la publicación de la publicación del blog.</target>
+            </trans-unit>
+            <trans-unit id="help.comment_content">
+                <source>help.comment_content</source>
+                <target>Los comentarios que no cumplan con nuestro Código de Conducta serán moderados.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

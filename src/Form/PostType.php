@@ -33,7 +33,7 @@ class PostType extends AbstractType
 {
     private $slugger;
 
-    // Form types are services, so you can inject other services in them if needed
+    // Form types are services, so you can inject other services in then if needed
     public function __construct(SluggerInterface $slugger)
     {
         $this->slugger = $slugger;
