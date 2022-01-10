@@ -1,0 +1,22 @@
+#fm_elfinder:
+#    resource: "@FMElfinderBundle/Resources/config/routing.yaml"
+    
+ef_connect:
+    path:  /{_locale}/efconnect/{instance}/{homeFolder}
+    defaults: { _controller: FM\ElfinderBundle\Controller\ElFinderController::load, instance: default, homeFolder: '' }
+    requirements:
+         _locale: '%app_locales%'
+ef_main_js:
+    path:  /{_locale}/elfinder.main.js
+    defaults: { _controller: FM\ElfinderBundle\Controller\ElFinderController::mainJS }
+    requirements:
+        _locale: '%app_locales%'
+elfinder:
+#    path: /elfinder/{instance}/{homeFolder}
+#    defaults: { _controller: FM\ElfinderBundle\Controller\ElFinderController::show, instance: default, homeFolder: '' }
+#    elfinder:
+    path: /{_locale}/elfinder/{instance}/{homeFolder}
+    defaults: { _controller: FM\ElfinderBundle\Controller\ElFinderController::show, instance: default, homeFolder: '' }
+    requirements:
+        _locale: '%app_locales%'
+

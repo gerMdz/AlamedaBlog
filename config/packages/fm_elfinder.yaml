@@ -1,0 +1,20 @@
+fm_elfinder:
+    instances:
+        default:
+            locale: '%locale%'
+            editor: ckeditor
+            fullscreen: true # Taille d'affichage
+            theme: smoothness # Thème à utiliser
+            relative_path: false
+#            include_assets: true # Charge automatiquement les fichiers nécessaires
+            connector:
+                debug: false # Désactive le débug
+                roots:
+                    uploads:
+                        show_hidden: false # Masque les fichiers cachés
+                        driver: LocalFileSystem # Pilote des fichiers
+                        path: uploads/images # Chemin d'upload
+                        upload_allow: [ 'image/png', 'image/jpg', 'image/jpeg' ] # Fichiers autorisés
+                        upload_deny: [ 'all' ] # Fichiers interdits
+                        upload_max_size: 2M # Taille maximum
+                        url: '%env(APP_URL_IMAGES)%'

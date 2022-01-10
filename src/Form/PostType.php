@@ -14,6 +14,7 @@ namespace App\Form;
 use App\Entity\Post;
 use App\Form\Type\DateTimePickerType;
 use App\Form\Type\TagsInputType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -62,7 +63,7 @@ class PostType extends AbstractType
                 'help' => 'help.post_summary',
                 'label' => 'label.summary',
             ])
-            ->add('content', null, [
+            ->add('content', CKEditorType::class, [
                 'attr' => ['rows' => 20],
                 'help' => 'help.post_content',
                 'label' => 'label.content',
