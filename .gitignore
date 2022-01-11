@@ -27,3 +27,7 @@ public/build
 
 /data/database.sqlite
 /data/database_test.sqlite
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###

@@ -165,10 +165,13 @@
                 <source>action.browse_admin</source>
                 <target>Acceder al backend</target>
             </trans-unit>
-
             <trans-unit id="label.title">
                 <source>label.title</source>
                 <target>Título</target>
+            </trans-unit>
+            <trans-unit id="label.image">
+                <source>label.image</source>
+                <target>Imagen</target>
             </trans-unit>
             <trans-unit id="action.close">
                 <source>action.close</source>

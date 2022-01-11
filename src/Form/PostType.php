@@ -14,6 +14,7 @@ namespace App\Form;
 use App\Entity\Post;
 use App\Form\Type\DateTimePickerType;
 use App\Form\Type\TagsInputType;
+use FM\ElfinderBundle\Form\Type\ElFinderType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -55,6 +56,9 @@ class PostType extends AbstractType
         // $builder->add('title', null, ['required' => false, ...]);
 
         $builder
+            ->add('imageFilename', ElFinderType::class, [
+                'label' => 'label.image',
+            ])
             ->add('title', null, [
                 'attr' => ['autofocus' => true],
                 'label' => 'label.title',

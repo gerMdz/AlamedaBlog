@@ -1,0 +1,27 @@
+# Documentation on how to configure the bundle can be found at: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+#    driver: "gd"
+
+    resolvers:
+        default:
+            web_path:
+#                web_root: ~ # %kernel.project_dir%/public (%kernel.project_dir%/web for Symfony < 4.0.0)
+                cache_prefix: media/cache
+
+    loaders:
+        default:
+            filesystem:
+#                data_root: "%env(APP_URL_IMAGES)%"
+                data_root: "%kernel.project_dir%/public/uploads/images"
+    cache: default
+    data_loader: default
+
+    filter_sets:
+
+        squared_thumbnail_section:
+            filters:
+                thumbnail:
+                    size: [ 300, 100 ]
+                    mode: outbound
+                    allow_upscale: true

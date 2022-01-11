@@ -18,6 +18,7 @@
         "erusev/parsedown": "^1.6",
         "friendsofsymfony/ckeditor-bundle": "^2.3",
         "helios-ag/fm-elfinder-bundle": "^10.1",
+        "liip/imagine-bundle": "^2.7",
         "sensio/framework-extra-bundle": "^6.1",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "^5.4",
