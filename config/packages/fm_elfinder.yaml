@@ -3,18 +3,33 @@ fm_elfinder:
         default:
             locale: '%locale%'
             editor: ckeditor
-            fullscreen: true # Taille d'affichage
-            theme: smoothness # Thème à utiliser
+            fullscreen: true
+            theme: smoothness
             relative_path: false
-#            include_assets: true # Charge automatiquement les fichiers nécessaires
+
             connector:
-                debug: false # Désactive le débug
+                debug: false
                 roots:
                     uploads:
-                        show_hidden: false # Masque les fichiers cachés
-                        driver: LocalFileSystem # Pilote des fichiers
-                        path: uploads/images # Chemin d'upload
-                        upload_allow: [ 'image/png', 'image/jpg', 'image/jpeg' ] # Fichiers autorisés
-                        upload_deny: [ 'all' ] # Fichiers interdits
-                        upload_max_size: 2M # Taille maximum
+                        show_hidden: false
+                        driver: LocalFileSystem
+                        path: uploads/images
+                        upload_allow: [ 'image/png', 'image/jpg', 'image/jpeg' ]
+                        upload_deny: [ 'all' ]
+                        upload_max_size: 2M
+                        url: '%env(APP_URL_IMAGES)%'
+        form:
+            locale: '%locale%' # defaults to current request locale
+            editor: form # other choices are tinymce or simple, and form
+            fullscreen: true # defaults true, applies to simple and ckeditor editors
+            connector:
+                debug: false # defaults to false
+                roots: # at least one root must be defined
+                    uploads:
+                        show_hidden: false # defaults to false
+                        driver: LocalFileSystem
+                        path: uploads/images
+                        upload_allow: [ 'image/png', 'image/jpg', 'image/jpeg' ]
+                        upload_deny: [ 'all' ]
+                        upload_max_size: 2M
                         url: '%env(APP_URL_IMAGES)%'

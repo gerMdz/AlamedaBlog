@@ -10,7 +10,8 @@
         <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
     </p>
 
-    {{ post.content|markdown_to_html|sanitize_html }}
+    {{ post.content|markdown_to_html }}
+
 
     {{ include('blog/_post_tags.html.twig') }}
 
@@ -39,7 +40,7 @@
 
     {% for comment in post.comments %}
         <div class="row post-comment">
-            <a name="comment_{{ comment.id }}"></a>
+            <a id="comment_{{ comment.id }}"></a>
             <h4 class="col-sm-3">
                 <strong>{{ comment.author.fullName }}</strong> {{ 'post.commented_on'|trans }}
                 {# it's not mandatory to set the timezone in localizeddate(). This is done to

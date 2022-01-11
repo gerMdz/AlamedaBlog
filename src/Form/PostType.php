@@ -58,6 +58,11 @@ class PostType extends AbstractType
         $builder
             ->add('imageFilename', ElFinderType::class, [
                 'label' => 'label.image',
+                'instance' => 'form',
+                'enable' => true,
+                'attr' => [
+                    'class' => 'form-control'
+                    ]
             ])
             ->add('title', null, [
                 'attr' => ['autofocus' => true],
@@ -71,6 +76,13 @@ class PostType extends AbstractType
                 'attr' => ['rows' => 20],
                 'help' => 'help.post_content',
                 'label' => 'label.content',
+                'config' => [
+                    'filebrowserBrowseRoute' => 'elfinder',
+                    'filebrowserBrowseRouteParameters' => [
+                        'instance' => 'default',
+                        'homeFolder' => ''
+                    ]
+                ],
             ])
             ->add('publishedAt', DateTimePickerType::class, [
                 'label' => 'label.published_at',
@@ -89,8 +101,7 @@ class PostType extends AbstractType
                 if (null !== $postTitle = $post->getTitle()) {
                     $post->setSlug($this->slugger->slug($postTitle)->lower());
                 }
-            })
-        ;
+            });
     }
 
     /**
