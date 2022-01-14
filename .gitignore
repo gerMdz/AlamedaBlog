@@ -31,3 +31,4 @@ public/build
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+/data/sugerencias.composer.install.txt
