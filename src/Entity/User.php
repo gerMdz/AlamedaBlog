@@ -12,6 +12,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -23,11 +24,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Defines the properties of the User entity to represent the application users.
  * See https://symfony.com/doc/current/doctrine.html#creating-an-entity-class
  *
- * Tip: if you have an existing database, you can generate these entity class automatically.
+ * Tip: if you have an existing database, you can generate this entity class automatically.
  * See https://symfony.com/doc/current/doctrine/reverse_engineering.html
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -79,6 +81,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $roles = [];
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,7 +101,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->fullName;
     }
 
-    public function getUserIdentifier(): string
+    public function getUserIdentifier(): ?string
     {
         return $this->username;
     }
@@ -184,5 +191,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // add $this->salt too if you don't use Bcrypt or Argon2i
         [$this->id, $this->username, $this->password] = $data;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
     }
 }

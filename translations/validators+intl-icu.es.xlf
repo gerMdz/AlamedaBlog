@@ -38,6 +38,10 @@
                 <source>comment.is_spam</source>
                 <target>El contenido del comentario se considera spam.</target>
             </trans-unit>
+            <trans-unit id="registration.accept.terms">
+                <source>registration.accept.terms</source>
+                <target>Debe aceptar nuestras normas de conducta en línea.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
