@@ -11,6 +11,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -26,7 +27,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * See https://symfony.com/doc/current/doctrine.html#creating-an-entity-class
  *
- * Tip: if you have an existing database, you can generate these entity class automatically.
+ * Tip: if you have an existing database, you can generate this entity class automatically.
  * See https://symfony.com/doc/current/doctrine/reverse_engineering.html
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
@@ -78,7 +79,7 @@ class Post
     private $content;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      *
      * @ORM\Column(type="datetime")
      */
@@ -122,7 +123,7 @@ class Post
 
     public function __construct()
     {
-        $this->publishedAt = new \DateTime();
+        $this->publishedAt = new DateTime();
         $this->comments = new ArrayCollection();
         $this->tags = new ArrayCollection();
     }
@@ -162,12 +163,12 @@ class Post
         $this->content = $content;
     }
 
-    public function getPublishedAt(): \DateTime
+    public function getPublishedAt(): DateTime
     {
         return $this->publishedAt;
     }
 
-    public function setPublishedAt(\DateTime $publishedAt): void
+    public function setPublishedAt(DateTime $publishedAt): void
     {
         $this->publishedAt = $publishedAt;
     }
@@ -239,5 +240,10 @@ class Post
         $this->imageFilename = $imageFilename;
 
         return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return  $this->getImageFilename();
     }
 }

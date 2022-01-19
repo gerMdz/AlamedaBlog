@@ -155,6 +155,12 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.4.0"
     },
+    "league/flysystem": {
+        "version": "1.1.9"
+    },
+    "league/mime-type-detection": {
+        "version": "1.9.0"
+    },
     "league/uri-parser": {
         "version": "1.4.1"
     },
@@ -179,6 +185,18 @@
     },
     "nikic/php-parser": {
         "version": "v4.13.1"
+    },
+    "oneup/flysystem-bundle": {
+        "version": "3.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "e6c6440b279273a468e1f570b0fc1d4ff54ad69e"
+        },
+        "files": [
+            "config/packages/oneup_flysystem.yaml"
+        ]
     },
     "psr/cache": {
         "version": "1.0.1"
