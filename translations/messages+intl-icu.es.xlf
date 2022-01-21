@@ -397,6 +397,14 @@
                 <source>help.comment_content</source>
                 <target>Los comentarios que no cumplan con nuestro Código de Conducta serán moderados.</target>
             </trans-unit>
+            <trans-unit id="label.register">
+                <source>label.register</source>
+                <target>Registrarse</target>
+            </trans-unit>
+            <trans-unit id="label.agree_terms">
+                <source>label.agree_terms</source>
+                <target>Acepto términos</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

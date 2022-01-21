@@ -42,6 +42,14 @@
                 <source>registration.accept.terms</source>
                 <target>Debe aceptar nuestras normas de conducta en línea.</target>
             </trans-unit>
+            <trans-unit id="message.password.not_blank">
+                <source>message.password.not_blank</source>
+                <target>Por favor ingrese una contraseña.</target>
+            </trans-unit>
+            <trans-unit id="text.characters">
+                <source>text.characters</source>
+                <target>caracteres</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
