@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Register;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
@@ -30,16 +31,19 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
-        $user = new User();
+        $user = new Register();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = new User();
             // encode the plain password
+            $email = $form->get('email')->getData();
+            $user->setUsername($email);
             $user->setPassword(
             $userPasswordHasher->hashPassword(
                     $user,
-                    $form->get('plainPassword')->getData()
+                    $form->get('password')->getData()
                 )
             );
 

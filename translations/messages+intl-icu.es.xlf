@@ -405,6 +405,14 @@
                 <source>label.agree_terms</source>
                 <target>Acepto términos</target>
             </trans-unit>
+            <trans-unit id="label.mail">
+                <source>label.mail</source>
+                <target>Dirección de mail</target>
+            </trans-unit>
+            <trans-unit id="label.fullname">
+                <source>label.fullname</source>
+                <target>Nombre completo</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

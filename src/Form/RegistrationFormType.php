@@ -2,11 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\User;
+use App\Entity\Register;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -18,7 +19,12 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('username')
+            ->add('email', TextType::class,[
+                'label'=>'label.email'
+            ])
+            ->add('fullName', TextType::class,[
+                'label'=>'label.fullname'
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'label'=>'label.agree_terms',
@@ -28,9 +34,9 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('plainPassword', RepeatedType::class, [
+            ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
+//                'invalid_message' => 'The password fields must match.',
                 'options' => [
                     'constraints' => [
                         new NotBlank([
@@ -50,7 +56,6 @@ class RegistrationFormType extends AbstractType
                 'second_options' => ['label' => 'Repita Password'],
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
-                'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
             ])
         ;
@@ -59,7 +64,7 @@ class RegistrationFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
+            'data_class' => Register::class,
         ]);
     }
 }
