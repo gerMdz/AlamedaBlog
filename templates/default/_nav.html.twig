@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light text-primary">
-    <div class="container-fluid">
-        <div class="navbar-header col-md-3 col-lg-2">
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid bg-blog-azul">
+        <div class="navbar-header col-md-3 col-lg-2 ">
             <a class="navbar-brand" href="{{ path('homepage') }}">
-                Alameda Blog
+                <img src="{{ asset('images/logo-con-nombre.png') }}" class="img-responsive img-fluid" style="height: 50px">
             </a>
             <button class="navbar-toggler" type="button"
                     data-bs-toggle="collapse"
@@ -15,9 +15,9 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-menu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-blog-azul">
                 {% block header_navigation_links %}
-                    <li class="nav-item">
+                    <li class="nav-item text-blog-azul">
                         <a href="{{ path('blog_index') }}" class="nav-link">
                             <i class="fa fa-home" aria-hidden="true"></i> {{ 'menu.homepage'|trans }}
                         </a>
