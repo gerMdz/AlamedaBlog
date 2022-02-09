@@ -5,14 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}Alameda Blog {% endblock %}</title>
     <link rel="alternate" type="application/rss+xml" title="{{ 'rss.title'|trans }}" href="{{ path('blog_rss') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
+    <style>
+
+        .font-lato {
+            font-family: 'Lato', sans-serif !important;
+        }
+        body {
+            font-family: "Lato",sans-serif; font-style: normal; font-weight: 400 !important;
+        }
+    </style>
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 
-<body id="{% block body_id %}{% endblock %}">
+<body id="{% block body_id %}{% endblock %}" >
 
 {% block header %}
     <header>
