@@ -7,7 +7,7 @@
     <link rel="alternate" type="application/rss+xml" title="{{ 'rss.title'|trans }}" href="{{ path('blog_rss') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
@@ -18,7 +18,7 @@
             font-family: 'Lato', sans-serif !important;
         }
         body {
-            font-family: "Lato",sans-serif; font-style: normal; font-weight: 400 !important;
+            font-family: "Lato",sans-serif; font-style: normal; font-weight: 100 !important;
         }
     </style>
 
@@ -36,21 +36,21 @@
 <div class="container body-container">
     {% block body %}
         <div class="row mt-5">
-            <div id="main" class="col-sm-10">
+            <div id="main" class="col-sm-10 mx-auto">
                 {{ include('default/_flash_messages.html.twig') }}
 
                 {% block main %}{% endblock %}
             </div>
 
-            <div id="sidebar" class="col-sm-2">
-                {% block sidebar %}
+{#            <div id="sidebar" class="col-sm-2">#}
+{#                {% block sidebar %}#}
                     {#                            {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', { #}
                     {#                                'template': 'blog/about.html.twig', #}
                     {#                                'sharedAge': 600, #}
                     {#                                '_locale': app.request.locale #}
                     {#                            })) }} #}
-                {% endblock %}
-            </div>
+{#                {% endblock %}#}
+{#            </div>#}
         </div>
     {% endblock %}
 </div>

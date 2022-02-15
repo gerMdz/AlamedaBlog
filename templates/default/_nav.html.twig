@@ -14,26 +14,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse-menu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-blog-azul">
+        <div class="collapse navbar-collapse " id="navbar-collapse-menu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-blog-azul">
                 {% block header_navigation_links %}
                     <li class="nav-item text-blog-azul">
                         <a href="{{ path('blog_index') }}" class="nav-link">
-                            <i class="fa fa-home" aria-hidden="true"></i> {{ 'menu.homepage'|trans }}
+                            {{ 'menu.homepage'|trans }}
                         </a>
                     </li>
 
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('admin_post_index') }}">
-                                <i class="fa fa-lock" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
+                                {{ 'menu.admin'|trans }}
                             </a>
                         </li>
                     {% endif %}
                 {% endblock %}
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('blog_search') }}"><i class="fa fa-search"></i> {{ 'menu.search'|trans }}
+                    <a class="nav-link" href="{{ path('blog_search') }}">
+                        {{ 'menu.search'|trans }}
                     </a>
                 </li>
 
@@ -41,20 +42,20 @@
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" role="button"
                            aria-expanded="false" id="user">
-                            <i class="fa fa-user" aria-hidden="true"></i>
+                            Usuario
                             <span class="caret"></span>
                             <span class="sr-only">{{ app.user.fullname }}</span>
                         </a>
                         <ul class="dropdown-menu user" role="menu" aria-labelledby="user">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('user_edit') }}">
-                                    <i class="fa fa-edit" aria-hidden="true"></i> {{ 'menu.user'|trans }}
+                                    {{ 'menu.user'|trans }}
                                 </a>
                             </li>
                             <li class="divider"></li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('security_logout') }}">
-                                    <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'menu.logout'|trans }}
+                                    {{ 'menu.logout'|trans }}
                                 </a>
                             </li>
                         </ul>
@@ -66,7 +67,7 @@
                        data-bs-toggle="dropdown"
                        role="button"
                        aria-expanded="false" id="locales">
-                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        <i> Idioma </i>
                         <span class="caret"></span>
                         <span class="sr-only">{{ 'menu.choose_language'|trans }}</span>
                     </a>
