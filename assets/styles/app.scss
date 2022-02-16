@@ -100,7 +100,7 @@ header .locales a small {
   line-height: 1.1;
   margin: 2px 10px 0 0;
   min-width: 26px;
-  padding: 0px 3px;
+  padding: 0 3px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -393,4 +393,27 @@ body#blog_search .post-metadata {
 .blog-azul-toggler.navbar-toggler {
   border-color: rgb(35, 116, 209);
   color: black;
+}
+
+.blog-h2-a{
+  color: #333;
+  font-weight: 500;
+  font-size: 18px;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  line-height: 26px;
+  text-decoration-line: none
+}
+
+.summary {
+  font-size: 14px;
+  line-height: 22px;
+  overflow-wrap: break-word;
+}
+
+.footer-blog {
+  border-top: 1px solid #e6e6e6;
+  font-size: 12px;
+  background-color: #1d2336;
+  color: #fff;
 }
