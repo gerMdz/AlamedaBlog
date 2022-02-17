@@ -260,9 +260,19 @@ body#login #login-users-help p .console {
 /* Common Blog page elements
    ------------------------------------------------------------------------- */
 .post-metadata {
-  color: #b4bcc2;
-  font-size: 19px;
+  color: #1c2237;
+  font-size: 21px;
   margin-bottom: 16px;
+  font-weight: 400;
+}
+.post-metadata > p,
+.post-metadata > ul,
+.post-metadata > ol
+{
+  color: #1c2237;
+  font-size: 21px!important;
+  margin-bottom: 16px;
+  font-weight: 400;
 }
 .post-metadata .metadata {
   margin-right: 1.5em;
@@ -404,6 +414,18 @@ body#blog_search .post-metadata {
   overflow-wrap: break-word;
   text-transform: uppercase;
   line-height: 26px;
+  text-decoration-line: none
+}
+.blog-h1-title{
+  font-family: "Lato",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: #333;
+  overflow-wrap: break-word;
   text-decoration-line: none
 }
 

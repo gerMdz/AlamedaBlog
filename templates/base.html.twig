@@ -41,16 +41,17 @@
 
                 {% block main %}{% endblock %}
             </div>
+                            {% block sidebar %}
+            <div id="sidebar" class="col-sm-2">
 
-{#            <div id="sidebar" class="col-sm-2">#}
-{#                {% block sidebar %}#}
                     {#                            {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', { #}
                     {#                                'template': 'blog/about.html.twig', #}
                     {#                                'sharedAge': 600, #}
                     {#                                '_locale': app.request.locale #}
                     {#                            })) }} #}
-{#                {% endblock %}#}
-{#            </div>#}
+
+            </div>
+                            {% endblock %}
         </div>
     {% endblock %}
 </div>

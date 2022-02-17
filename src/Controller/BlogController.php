@@ -34,6 +34,7 @@ use Symfony\Component\Routing\Annotation\Route;
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
+ * @author Gerardo J. Montivero <gerardo.montivero@gmail.com>
  */
 class BlogController extends AbstractController
 {
@@ -75,12 +76,7 @@ class BlogController extends AbstractController
      */
     public function postShow(Post $post): Response
     {
-        // Symfony's 'dump()' function is an improved version of PHP's 'var_dump()' but
-        // it's not available in the 'prod' environment to prevent leaking sensitive information.
-        // It can be used both in PHP files and Twig templates, but it requires to
-        // have enabled the DebugBundle. Uncomment the following line to see it in action:
-        //
-        // dump($post, $this->getUser(), new \DateTime());
+        //dump($post, $this->getUser(), new \DateTime());
 
         return $this->render('blog/post_show.html.twig', ['post' => $post]);
     }
