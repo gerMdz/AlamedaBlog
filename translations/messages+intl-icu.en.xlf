@@ -442,6 +442,14 @@
                 <source>paginator.current</source>
                 <target>(current)</target>
             </trans-unit>
+            <trans-unit id="menu.my_account">
+                <source>menu.my_account</source>
+                <target>My Account</target>
+            </trans-unit>
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Login</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

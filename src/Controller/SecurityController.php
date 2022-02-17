@@ -11,6 +11,7 @@
 
 namespace App\Controller;
 
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,6 +26,7 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
+ * @author Gerardo J. Montivero <gerardo.montivero@gmail.com>
  */
 class SecurityController extends AbstractController
 {
@@ -48,7 +50,7 @@ class SecurityController extends AbstractController
 
         return $this->render('security/login.html.twig', [
             // last username entered by the user (if any)
-            'last_username' => $helper->getLastUsername(),
+//            'last_username' => $helper->getLastUsername(),
             // last authentication error (if any)
             'error' => $helper->getLastAuthenticationError(),
         ]);
@@ -61,9 +63,10 @@ class SecurityController extends AbstractController
      * and handle the logout automatically. See logout in config/packages/security.yaml
      *
      * @Route("/logout", name="security_logout")
+     * @throws Exception
      */
     public function logout(): void
     {
-        throw new \Exception('This should never be reached!');
+        throw new Exception('This should never be reached!');
     }
 }

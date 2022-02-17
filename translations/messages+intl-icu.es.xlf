@@ -296,6 +296,10 @@
                 <source>help.login_users</source>
                 <target>Prueba a acceder con estos usuarios</target>
             </trans-unit>
+            <trans-unit id="help.register_users">
+                <source>help.register_users</source>
+                <target>Registrarse</target>
+            </trans-unit>
             <trans-unit id="help.role_user">
                 <source>help.role_user</source>
                 <target>usuario normal</target>
@@ -412,6 +416,14 @@
             <trans-unit id="label.fullname">
                 <source>label.fullname</source>
                 <target>Nombre completo</target>
+            </trans-unit>
+            <trans-unit id="menu.my_account">
+                <source>menu.my_account</source>
+                <target>Mi cuenta</target>
+            </trans-unit>
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Acceder</target>
             </trans-unit>
         </body>
     </file>
