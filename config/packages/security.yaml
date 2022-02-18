@@ -61,12 +61,14 @@ security:
     access_control:
         # this is a catch-all for the admin area
         # additional security lives in the controllers
-        - { path: '^/(%app_locales%)/admin', roles: ROLE_ADMIN }
-        - { path: '^/(%app_locales%)/elfinder', roles: ROLE_ADMIN }
-        - { path: '^/(%app_locales%)/efconnect', roles: ROLE_ADMIN }
+        - { path: '^/(%app_locales%)/admin', roles: ROLE_ESCRITOR }
+        - { path: '^/(%app_locales%)/elfinder', roles: ROLE_ESCRITOR }
+        - { path: '^/(%app_locales%)/efconnect', roles: ROLE_ESCRITOR }
 
     role_hierarchy:
-        ROLE_ADMIN: ROLE_USER
+        ROLE_ADMIN: ROLE_EDITOR
+        ROLE_EDITOR: ROLE_ESCRITOR
+        ROLE_ESCRITOR: ROLE_USER
 
 when@test:
     # this configuration simplifies testing URLs protected by the security mechanism

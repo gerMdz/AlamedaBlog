@@ -57,6 +57,9 @@ class BlogController extends AbstractController
     public function index(PostRepository $posts): Response
     {
         $authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        if(in_array('ROLE_ADMIN',$this->getUser()->getRoles())){
+            $authorPosts = $posts->findBy([],['publishedAt' => 'DESC']);
+        }
 
         return $this->render('admin/blog/index.html.twig', ['posts' => $authorPosts]);
     }

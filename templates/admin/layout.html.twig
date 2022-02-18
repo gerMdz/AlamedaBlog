@@ -24,7 +24,12 @@
         </a>
     </li>
 {% endblock %}
-
+{% block main %}
+<div class="row g-4 mt-5">
+    {% block submain %}
+    {% endblock %}
+</div>
+{% endblock %}
 {% block javascripts %}
     {{ parent() }}
     {{ encore_entry_script_tags('admin') }}

@@ -89,6 +89,7 @@
                         {% endfor %}
                     </ul>
                 </li>
+                {% if app.user == null  %}
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle"
                        data-bs-toggle="dropdown"
@@ -99,25 +100,18 @@
                         <span class="sr-only">{{ 'menu.my_account'|trans }}</span>
                     </a>
                     <ul class="dropdown-menu locales" role="menu" aria-labelledby="locales">
-                        {% if app.user  %}
-                            <li class="nav-item"
-                                role="menuitem">
-                                <a class="nav-link"
-                                   href="{{ path('security_logout')}}">
-                                    {{ 'menu.logout'|trans }}
-                                </a>
-                            </li>
-                            {% else %}
+
                             <li class="nav-item" role="menuitem">
                                 <a class="nav-link"
                                    href="{{ path('security_login')}}">
                                     {{ 'menu.login'|trans }}
                                 </a>
                             </li>
-                        {% endif %}
+
 
                     </ul>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </div>
