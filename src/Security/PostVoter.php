@@ -15,6 +15,7 @@ use App\Entity\Post;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * It grants or denies permissions for actions related to blog posts (such as
@@ -31,6 +32,12 @@ class PostVoter extends Voter
     public const DELETE = 'delete';
     public const EDIT = 'edit';
     public const SHOW = 'show';
+    private Security $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
 
     /**
      * {@inheritdoc}
@@ -58,6 +65,6 @@ class PostVoter extends Voter
         // the logic of this voter is pretty simple: if the logged user is the
         // author of the given blog post, grant permission; otherwise, deny it.
         // (the supports() method guarantees that $post is a Post object)
-        return $user === $post->getAuthor();
+        return ($user === $post->getAuthor() or $this->security->isGranted('ROLE_ADMIN'));
     }
 }
