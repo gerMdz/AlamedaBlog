@@ -13,9 +13,12 @@ namespace App\Repository;
 
 use App\Entity\Post;
 use App\Entity\Tag;
+use App\Entity\User;
 use App\Pagination\Paginator;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Security\Core\User\UserInterface;
 use function Symfony\Component\String\u;
 
 /**
@@ -43,7 +46,7 @@ class PostRepository extends ServiceEntityRepository
             ->leftJoin('p.tags', 't')
             ->where('p.publishedAt <= :now')
             ->orderBy('p.publishedAt', 'DESC')
-            ->setParameter('now', new \DateTime())
+            ->setParameter('now', new DateTime())
         ;
 
         if (null !== $tag) {
@@ -94,4 +97,21 @@ class PostRepository extends ServiceEntityRepository
             return 2 <= $term->length();
         });
     }
+
+    public function findByAuthor(int $page = 1, UserInterface $user = null): Paginator
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->addSelect('a')
+            ->innerJoin('p.author', 'a')
+            ->orderBy('p.publishedAt', 'DESC')
+        ;
+
+        if (null !== $user) {
+            $qb->andWhere('p.author = :user ')
+                ->setParameter('user', $user);
+        }
+
+        return (new Paginator($qb))->paginate($page);
+    }
+
 }

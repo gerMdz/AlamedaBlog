@@ -17,6 +17,7 @@ use App\Form\Type\TagsInputType;
 use FM\ElfinderBundle\Form\Type\ElFinderType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -33,7 +34,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
  */
 class PostType extends AbstractType
 {
-    private $slugger;
+    private SluggerInterface $slugger;
 
     // Form types are services, so you can inject other services in then if needed
     public function __construct(SluggerInterface $slugger)
@@ -84,9 +85,11 @@ class PostType extends AbstractType
                     ]
                 ],
             ])
-            ->add('publishedAt', DateTimePickerType::class, [
+            ->add('publishedAt', DateTimeType::class, [
                 'label' => 'label.published_at',
                 'help' => 'help.post_publication',
+                'widget' => 'single_text',
+                'html5' => true,
             ])
             ->add('tags', TagsInputType::class, [
                 'label' => 'label.tags',

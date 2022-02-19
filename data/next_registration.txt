@@ -8,4 +8,6 @@ Next:
  Then open your browser, go to "/register" and enjoy your new form!
 
  4) Add a list of posts written by each author
- 5) Pagination in admin list post
+ 5) [x] Pagination in admin list post
+ 6) Page search to t-5
+ 7) Filter admin post by author

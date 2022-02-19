@@ -19,7 +19,8 @@
             </tr>
         </thead>
         <tbody>
-        {% for post in posts %}
+        {% for post in paginator.results %}
+
             <tr>
                 <td>{{ post.title }}</td>
                 {# it's not mandatory to set the timezone in localizeddate(). This is done to
@@ -53,6 +54,61 @@
             <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.create_post'|trans }}
         </a>
     </div>
+    {% if paginator.hasToPaginate %}
+        <nav aria-label="Page navigation blog" class="align-content-center mt-5">
+            <ul class="pagination justify-content-center">
+                {% if paginator.hasPreviousPage %}
+                    <li class="page-item">
+                        <a href="{{ path('admin_post_paginated', {page: paginator.previousPage}) }}"
+                           class="page-link" rel="previous">
+                            <i class="fa fw fa-long-arrow-left"></i> {{ 'paginator.previous'|trans }}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">
+                            <i class="fa fw fa-arrow-left"></i>
+                            {{ 'paginator.previous'|trans }}
+                        </span>
+                    </li>
+                {% endif %}
+
+                {% for i in 1..paginator.lastPage %}
+                    {% if i == paginator.currentPage %}
+                        <li class="page-item active">
+                            <span class="page-link">{{ i }}
+                                <span class="sr-only">{{ 'paginator.current'|trans }}</span>
+                            </span>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a href="{{ path('admin_post_paginated', {page: i}) }}"
+                               class="page-link">
+                                {{ i }}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if paginator.hasNextPage %}
+                    <li class="page-item">
+                        <a href="{{ path('blog_index_paginated', {page: paginator.nextPage}) }}"
+                           class="page-link" rel="next">
+                            {{ 'paginator.next'|trans }}
+                            <i class="fa fw fa-arrow-right"></i>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">
+                            {{ 'paginator.next'|trans }}
+                            <i class="fa fw fa-arrow-right"></i>
+                        </span>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
 
 {#    {{ parent() }}#}
 

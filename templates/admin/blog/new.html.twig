@@ -6,6 +6,7 @@
     <h1>{{ 'title.post_new'|trans }}</h1>
 
     {{ form_start(form) }}
+        {{ form_row(form.imageFilename) }}
         {{ form_row(form.title) }}
         {{ form_row(form.summary) }}
         {{ form_row(form.content) }}

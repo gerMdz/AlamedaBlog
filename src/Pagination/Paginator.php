@@ -28,7 +28,7 @@ class Paginator
      */
     public const PAGE_SIZE = 10;
 
-    private $queryBuilder;
+    private DoctrineQueryBuilder $queryBuilder;
     private $currentPage;
     private $pageSize;
     private $results;

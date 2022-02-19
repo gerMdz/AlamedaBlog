@@ -16,6 +16,7 @@ use App\Form\PostType;
 use App\Repository\PostRepository;
 use App\Security\PostVoter;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -33,10 +34,11 @@ use Symfony\Component\Routing\Annotation\Route;
  * See http://knpbundles.com/keyword/admin
  *
  * @Route("/admin/post")
- * @IsGranted("ROLE_ADMIN")
+ * @IsGranted("ROLE_ESCRITOR")
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
+ * @author Gerardo J. Montivero <gerardo.montivero@gmail.com>
  */
 class BlogController extends AbstractController
 {
@@ -51,17 +53,20 @@ class BlogController extends AbstractController
      *     could move this annotation to any other controller while maintaining
      *     the route name and therefore, without breaking any existing link.
      *
-     * @Route("/", methods="GET", name="admin_index")
-     * @Route("/", methods="GET", name="admin_post_index")
+     * @Route("/", defaults={"page": "1", "_format"="html"}, methods="GET", name="admin_index")
+     * @Route("/", defaults={"page": "1", "_format"="html"}, methods="GET", name="admin_post_index")
+     * @Route("/page/{page<[1-9]\d*>}", defaults={"_format"="html"}, methods="GET", name="admin_post_paginated")
+     * @Cache(smaxage="10")
      */
-    public function index(PostRepository $posts): Response
+    public function index(PostRepository $posts, int $page): Response
     {
-        $authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        $author = $this->getUser();
         if(in_array('ROLE_ADMIN',$this->getUser()->getRoles())){
-            $authorPosts = $posts->findBy([],['publishedAt' => 'DESC']);
+            $author = null;
         }
+        $postsList = $posts->findByAuthor($page, $author);
 
-        return $this->render('admin/blog/index.html.twig', ['posts' => $authorPosts]);
+        return $this->render('admin/blog/index.html.twig', ['paginator' => $postsList]);
     }
 
     /**
