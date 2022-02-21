@@ -51,9 +51,9 @@ class PostVoter extends Voter
     /**
      * {@inheritdoc}
      *
-     * @param Post $post
+     * @param Post $subject
      */
-    protected function voteOnAttribute(string $attribute, $post, TokenInterface $token): bool
+    protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token): bool
     {
         $user = $token->getUser();
 
@@ -65,6 +65,6 @@ class PostVoter extends Voter
         // the logic of this voter is pretty simple: if the logged user is the
         // author of the given blog post, grant permission; otherwise, deny it.
         // (the supports() method guarantees that $post is a Post object)
-        return ($user === $post->getAuthor() or $this->security->isGranted('ROLE_ADMIN'));
+        return ($user === $subject->getAuthor() or $this->security->isGranted('ROLE_ADMIN'));
     }
 }
