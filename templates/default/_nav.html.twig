@@ -24,7 +24,7 @@
                         </a>
                     </li>
 
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_ESCRITOR') %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('admin_post_index') }}">
                                 {{ 'menu.admin'|trans }}
