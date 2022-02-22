@@ -18,7 +18,10 @@
                             </a>
                         </h2>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            Por <span>{{ post.author.fullName }}</span>
+                            Por <a href="{{ path('blog_index', {'author' : post.author.fullName}) }}">
+                                <span>{{ post.author.fullName }} </span>
+                            </a>
+
                             | {{ post.publishedAt|format_datetime('long', 'none', '', 'UTC') }}
                         </h6>
                         <p class="card-text summary">
@@ -80,7 +83,7 @@
                 {% if paginator.hasNextPage %}
                     <li class="page-item">
                         <a href="{{ path('blog_index_paginated', {page: paginator.nextPage, tag: tagName}) }}"
-                               class="page-link" rel="next">
+                           class="page-link" rel="next">
                             {{ 'paginator.next'|trans }}
                             <i class="fa fw fa-arrow-right"></i>
                         </a>
@@ -99,8 +102,8 @@
 {% endblock %}
 
  {% block sidebar %}
-{#    {{ parent() }} #}
+     {#    {{ parent() }} #}
 
-{#    {{ show_source_code(_self) }} #}
-{#    {{ include('blog/_rss.html.twig') }} #}
+     {#    {{ show_source_code(_self) }} #}
+     {#    {{ include('blog/_rss.html.twig') }} #}
  {% endblock %}

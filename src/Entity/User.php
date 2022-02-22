@@ -48,7 +48,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
-    private $fullName;
+    private string $fullName;
 
     /**
      * @var string
@@ -57,7 +57,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Assert\NotBlank()
      * @Assert\Length(min=2, max=50)
      */
-    private $username;
+    private string $username;
 
     /**
      * @var string
@@ -65,26 +65,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", unique=true)
      * @Assert\Email()
      */
-    private $email;
+    private string $email;
 
     /**
      * @var string
      *
      * @ORM\Column(type="string")
      */
-    private $password;
+    private string $password;
 
     /**
      * @var array
      *
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    private array $roles = [];
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isVerified = false;
+    private bool $isVerified = false;
 
     public function getId(): ?int
     {

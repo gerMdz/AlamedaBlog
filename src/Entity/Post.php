@@ -51,14 +51,14 @@ class Post
      * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
-    private $title;
+    private string $title;
 
     /**
      * @var string
      *
      * @ORM\Column(type="string")
      */
-    private $slug;
+    private string $slug;
 
     /**
      * @var string
@@ -67,7 +67,7 @@ class Post
      * @Assert\NotBlank(message="post.blank_summary")
      * @Assert\Length(max=255)
      */
-    private $summary;
+    private string $summary;
 
     /**
      * @var string
@@ -76,14 +76,14 @@ class Post
      * @Assert\NotBlank(message="post.blank_content")
      * @Assert\Length(min=10, minMessage="post.too_short_content")
      */
-    private $content;
+    private string $content;
 
     /**
      * @var DateTime
      *
      * @ORM\Column(type="datetime")
      */
-    private $publishedAt;
+    private DateTime $publishedAt;
 
     /**
      * @var User
@@ -91,7 +91,7 @@ class Post
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $author;
+    private User $author;
 
     /**
      * @var Comment[]|Collection
@@ -119,7 +119,7 @@ class Post
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $imageFilename;
+    private ?string $imageFilename;
 
     public function __construct()
     {

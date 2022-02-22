@@ -13,10 +13,12 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Entity\Post;
+use App\Entity\User;
 use App\Event\CommentCreatedEvent;
 use App\Form\CommentType;
 use App\Repository\PostRepository;
 use App\Repository\TagRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -49,13 +51,23 @@ class BlogController extends AbstractController
      * Content-Type header for the response.
      * See https://symfony.com/doc/current/routing.html#special-parameters
      */
-    public function index(Request $request, int $page, string $_format, PostRepository $posts, TagRepository $tags): Response
-    {
+    public function index(
+        Request $request,
+        int $page,
+        string $_format,
+        PostRepository $posts,
+        TagRepository $tags,
+        UserRepository $authors
+    ): Response {
         $tag = null;
+        $autor = null;
         if ($request->query->has('tag')) {
             $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
         }
-        $latestPosts = $posts->findLatest($page, $tag);
+        if ($request->query->has('author')) {
+            $autor = $authors->findOneBy(['fullName' => $request->query->get('author')]);
+        }
+        $latestPosts = $posts->findLatest($page, $tag, $autor);
 
         // Every template name also has two extensions that specify the format and
         // engine for that template.
@@ -90,8 +102,12 @@ class BlogController extends AbstractController
      * (postSlug) doesn't match any of the Doctrine entity properties (slug).
      * See https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html#doctrine-converter
      */
-    public function commentNew(Request $request, Post $post, EventDispatcherInterface $eventDispatcher, EntityManagerInterface $entityManager): Response
-    {
+    public function commentNew(
+        Request $request,
+        Post $post,
+        EventDispatcherInterface $eventDispatcher,
+        EntityManagerInterface $entityManager
+    ): Response {
         $comment = new Comment();
         $comment->setAuthor($this->getUser());
         $post->addComment($comment);
@@ -148,7 +164,6 @@ class BlogController extends AbstractController
         if (!$request->isXmlHttpRequest()) {
             return $this->render('blog/search.html.twig', ['query' => $query]);
         }
-
         $foundPosts = $posts->findBySearchQuery($query, $limit);
 
         $results = [];
