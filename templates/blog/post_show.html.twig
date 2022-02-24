@@ -50,7 +50,7 @@
                    aria-hidden="true"></i> {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }}
             </h3>
 
-            {% for comment in post.comments %}
+            {% for comment in comments %}
                 <div class="row post-comment">
                     <a id="comment_{{ comment.id }}"></a>
                     <h4 class="col-sm-3">

@@ -1,0 +1,27 @@
+framework:
+    workflows:
+        comment:
+            type: state_machine
+            audit_trail:
+                enabled: "%kernel.debug%"
+            marking_store:
+                type: 'method'
+                property: 'state'
+            supports:
+                - App\Entity\Comment
+            initial_marking: submitted
+            places:
+                - submitted
+                - notificated
+                - rejected
+                - published
+            transitions:
+                sended:
+                    from: submitted
+                    to:   notificated
+                publish:
+                    from: notificated
+                    to:   published
+                reject:
+                    from: notificated
+                    to:   rejected

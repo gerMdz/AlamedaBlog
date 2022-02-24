@@ -40,6 +40,7 @@
         "symfony/twig-bundle": "^5.4",
         "symfony/validator": "^5.4",
         "symfony/webpack-encore-bundle": "^1.13",
+        "symfony/workflow": "5.4.*",
         "symfony/yaml": "^5.4",
         "symfonycasts/verify-email-bundle": "^1.7",
         "tgalopin/html-sanitizer-bundle": "^1.4",

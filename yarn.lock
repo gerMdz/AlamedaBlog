@@ -76,10 +76,10 @@
     browserslist "^4.17.5"
     semver "^6.3.0"
 
-"@babel/helper-create-class-features-plugin@^7.16.10", "@babel/helper-create-class-features-plugin@^7.16.7":
-  version "7.17.1"
-  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.17.1.tgz#9699f14a88833a7e055ce57dcd3ffdcd25186b21"
-  integrity sha512-JBdSr/LtyYIno/pNnJ75lBcqc3Z1XXujzPanHqjvvrhOA+DTceTFuJi8XjmWTZh4r3fsdfqaCMN0iZemdkxZHQ==
+"@babel/helper-create-class-features-plugin@^7.16.10", "@babel/helper-create-class-features-plugin@^7.16.7", "@babel/helper-create-class-features-plugin@^7.17.6":
+  version "7.17.6"
+  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.17.6.tgz#3778c1ed09a7f3e65e6d6e0f6fbfcc53809d92c9"
+  integrity sha512-SogLLSxXm2OkBbSsHZMM4tUi8fUzjs63AT/d0YQIzr6GSd8Hxsbk2KYDX0k0DweAzGMj/YWeiCsorIdtdcW8Eg==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.16.7"
     "@babel/helper-environment-visitor" "^7.16.7"
@@ -163,9 +163,9 @@
     "@babel/types" "^7.16.7"
 
 "@babel/helper-module-transforms@^7.16.7":
-  version "7.16.7"
-  resolved "https://registry.yarnpkg.com/@babel/helper-module-transforms/-/helper-module-transforms-7.16.7.tgz#7665faeb721a01ca5327ddc6bba15a5cb34b6a41"
-  integrity sha512-gaqtLDxJEFCeQbYp9aLAefjhkKdjKcdh6DB7jniIGU3Pz52WAmP268zK0VgPz9hUNkMSYeH976K2/Y6yPadpng==
+  version "7.17.6"
+  resolved "https://registry.yarnpkg.com/@babel/helper-module-transforms/-/helper-module-transforms-7.17.6.tgz#3c3b03cc6617e33d68ef5a27a67419ac5199ccd0"
+  integrity sha512-2ULmRdqoOMpdvkbT8jONrZML/XALfzxlb052bldftkicAUy8AxSCkD5trDPQcwHNmolcl7wP6ehNqMlyUw6AaA==
   dependencies:
     "@babel/helper-environment-visitor" "^7.16.7"
     "@babel/helper-module-imports" "^7.16.7"
@@ -173,8 +173,8 @@
     "@babel/helper-split-export-declaration" "^7.16.7"
     "@babel/helper-validator-identifier" "^7.16.7"
     "@babel/template" "^7.16.7"
-    "@babel/traverse" "^7.16.7"
-    "@babel/types" "^7.16.7"
+    "@babel/traverse" "^7.17.3"
+    "@babel/types" "^7.17.0"
 
 "@babel/helper-optimise-call-expression@^7.16.7":
   version "7.16.7"
@@ -306,11 +306,11 @@
     "@babel/helper-plugin-utils" "^7.16.7"
 
 "@babel/plugin-proposal-class-static-block@^7.16.7":
-  version "7.16.7"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-static-block/-/plugin-proposal-class-static-block-7.16.7.tgz#712357570b612106ef5426d13dc433ce0f200c2a"
-  integrity sha512-dgqJJrcZoG/4CkMopzhPJjGxsIe9A8RlkQLnL/Vhhx8AA9ZuaRwGSlscSh42hazc7WSrya/IK7mTeoF0DP9tEw==
+  version "7.17.6"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-static-block/-/plugin-proposal-class-static-block-7.17.6.tgz#164e8fd25f0d80fa48c5a4d1438a6629325ad83c"
+  integrity sha512-X/tididvL2zbs7jZCeeRJ8167U/+Ac135AM6jCAx6gYXDUviZV5Ku9UDvWS2NCuWlFjIRXklYhwo6HhAC7ETnA==
   dependencies:
-    "@babel/helper-create-class-features-plugin" "^7.16.7"
+    "@babel/helper-create-class-features-plugin" "^7.17.6"
     "@babel/helper-plugin-utils" "^7.16.7"
     "@babel/plugin-syntax-class-static-block" "^7.14.5"
 
@@ -1165,9 +1165,9 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*":
-  version "17.0.19"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.19.tgz#726171367f404bfbe8512ba608a09ebad810c7e6"
-  integrity sha512-PfeQhvcMR4cPFVuYfBN4ifG7p9c+Dlh3yUZR6k+5yQK7wX3gDgVxBly4/WkBRs9x4dmcy1TVl08SY67wwtEvmA==
+  version "17.0.21"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
+  integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -1255,9 +1255,9 @@
     source-map "^0.6.0"
 
 "@types/ws@^8.2.2":
-  version "8.2.3"
-  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.2.3.tgz#0bca6b03ba2f41e0fab782d4a573fe284aa907ae"
-  integrity sha512-ahRJZquUYCdOZf/rCsWg88S0/+cb9wazUBHv6HZEe3XdYaBe2zr/slM8J28X07Hn88Pnm4ezo7N8/ofnOgrPVQ==
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.5.0.tgz#805ceb3f68eaebbed1a3004a66f16e35b7f3bf14"
+  integrity sha512-mTClfhq5cuGyW4jthaFuig6Q8OVfB3IRyZfN/9SCyJtiM5H0SubwM89cHoT9UngO6HyUFic88HvT1zSNLNyxWA==
   dependencies:
     "@types/node" "*"
 
@@ -2030,7 +2030,7 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-color-support@^1.1.2:
+color-support@^1.1.2, color-support@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==
@@ -3029,19 +3029,19 @@ gauge@^3.0.0:
     wide-align "^1.1.2"
 
 gauge@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/gauge/-/gauge-4.0.1.tgz#82984bc08c90357d60b0a46c03a296beb1affec4"
-  integrity sha512-zJ4jePUHR8cceduZ53b6temRalyGpkC2Kc2r3ecNphmL+uWNoJ3YcOcUjpbG6WwoE/Ef6/+aEZz63neI2WIa1Q==
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/gauge/-/gauge-4.0.2.tgz#c3777652f542b6ef62797246e8c7caddecb32cc7"
+  integrity sha512-aSPRm2CvA9R8QyU5eXMFPd+cYkyxLsXHd2l5/FOH2V/eml//M04G6KZOmTap07O1PvEwNcl2NndyLfK8g3QrKA==
   dependencies:
     ansi-regex "^5.0.1"
     aproba "^1.0.3 || ^2.0.0"
-    color-support "^1.1.2"
-    console-control-strings "^1.0.0"
+    color-support "^1.1.3"
+    console-control-strings "^1.1.0"
     has-unicode "^2.0.1"
-    signal-exit "^3.0.0"
+    signal-exit "^3.0.7"
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
-    wide-align "^1.1.2"
+    wide-align "^1.1.5"
 
 gaze@^1.0.0:
   version "1.1.3"
@@ -5360,7 +5360,7 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
-signal-exit@^3.0.0, signal-exit@^3.0.3:
+signal-exit@^3.0.0, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
@@ -6124,7 +6124,7 @@ which@^2.0.1, which@^2.0.2:
   dependencies:
     isexe "^2.0.0"
 
-wide-align@^1.1.2:
+wide-align@^1.1.2, wide-align@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/wide-align/-/wide-align-1.1.5.tgz#df1d4c206854369ecf3c9a4898f1b23fbd9d15d3"
   integrity sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==

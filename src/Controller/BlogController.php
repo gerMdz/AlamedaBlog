@@ -16,6 +16,7 @@ use App\Entity\Post;
 use App\Entity\User;
 use App\Event\CommentCreatedEvent;
 use App\Form\CommentType;
+use App\Repository\CommentRepository;
 use App\Repository\PostRepository;
 use App\Repository\TagRepository;
 use App\Repository\UserRepository;
@@ -85,12 +86,18 @@ class BlogController extends AbstractController
      * after performing a database query looking for a Post with the 'slug'
      * value given in the route.
      * See https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html
+     * @param Post $post
+     * @param CommentRepository $commentRepository
+     * @return Response
      */
-    public function postShow(Post $post): Response
+    public function postShow(Post $post, CommentRepository $commentRepository): Response
     {
         //dump($post, $this->getUser(), new \DateTime());
-
-        return $this->render('blog/post_show.html.twig', ['post' => $post]);
+        $comments = $commentRepository->getCommentPublishedByPost($post->getId())->getQuery()->getResult();
+        return $this->render('blog/post_show.html.twig', [
+            'post' => $post,
+            'comments' => $comments
+            ]);
     }
 
     /**
