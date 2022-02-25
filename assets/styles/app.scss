@@ -446,7 +446,13 @@ body#blog_search .post-metadata {
   line-height: 1.2 !important;
 }
 
-h6.card-subtitle,
+h6.card-subtitle
+{
+  font-size: 0.8em !important;
+}
 a.card-link{
-  font-size: 12px !important;
+  font-size: 0.8em !important;
+}
+p.summary{
+  font-size: 1em !important;
 }
