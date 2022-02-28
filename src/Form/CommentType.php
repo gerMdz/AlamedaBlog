@@ -13,7 +13,9 @@ namespace App\Form;
 
 use App\Entity\Comment;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -43,6 +45,13 @@ class CommentType extends AbstractType
         $builder
             ->add('content', TextareaType::class, [
                 'help' => 'help.comment_content',
+            ])
+            ->add('author', TextType::class, [
+                'label' =>'label.author_comment'
+            ])
+            ->add('email', EmailType::class, [
+                'label' =>'label.author_email_comment',
+                'help' => 'help.author_email_comment'
             ])
         ;
     }

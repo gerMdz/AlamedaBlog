@@ -33,17 +33,17 @@
 {#                    be able to add a comment. #}
 {#                    See https://symfony.com/doc/current/security/remember_me.html#forcing-the-user-to-re-authenticate-before-accessing-certain-resources #}
 
-                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+{#                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
                                 {{ render(controller('App\\Controller\\BlogController::commentForm', {'id': post.id})) }}
-                            {% else %}
-                                <p>
-                                    <a class="btn btn-success"
-                                       href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
-                                        <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
-                                    </a>
-                                    {{ 'post.to_publish_a_comment'|trans }}
-                                </p>
-                            {% endif %}
+{#                            {% else %}#}
+{#                                <p>#}
+{#                                    <a class="btn btn-success"#}
+{#                                       href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">#}
+{#                                        <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}#}
+{#                                    </a>#}
+{#                                    {{ 'post.to_publish_a_comment'|trans }}#}
+{#                                </p>#}
+{#                            {% endif %}#}
                         </div>
 
             <h3>

@@ -181,9 +181,21 @@
                 <source>label.author</source>
                 <target>Autor</target>
             </trans-unit>
+            <trans-unit id="label.author_comment">
+                <source>label.author_comment</source>
+                <target>Nombre</target>
+            </trans-unit>
             <trans-unit id="label.author_email">
                 <source>label.author_email</source>
                 <target>Email del autor</target>
+            </trans-unit>
+            <trans-unit id="label.author_email_comment">
+                <source>label.author_email_comment</source>
+                <target>Email </target>
+            </trans-unit>
+            <trans-unit id="help.author_email_comment">
+                <source>help.author_email_comment</source>
+                <target>El email no se mostrará</target>
             </trans-unit>
             <trans-unit id="label.username">
                 <source>label.username</source>
@@ -399,7 +411,7 @@
             </trans-unit>
             <trans-unit id="help.comment_content">
                 <source>help.comment_content</source>
-                <target>Los comentarios que no cumplan con nuestro Código de Conducta serán moderados.</target>
+                <target> * Los comentarios pueden ser moderados por los administradores del sitio.</target>
             </trans-unit>
             <trans-unit id="label.register">
                 <source>label.register</source>

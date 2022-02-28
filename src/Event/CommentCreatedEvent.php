@@ -16,7 +16,7 @@ use Symfony\Contracts\EventDispatcher\Event;
 
 class CommentCreatedEvent extends Event
 {
-    protected $comment;
+    protected Comment $comment;
 
     public function __construct(Comment $comment)
     {

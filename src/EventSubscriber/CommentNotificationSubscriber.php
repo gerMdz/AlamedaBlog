@@ -13,6 +13,7 @@ namespace App\EventSubscriber;
 
 use App\Event\CommentCreatedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -25,10 +26,10 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  */
 class CommentNotificationSubscriber implements EventSubscriberInterface
 {
-    private $mailer;
-    private $translator;
-    private $urlGenerator;
-    private $sender;
+    private MailerInterface $mailer;
+    private TranslatorInterface $translator;
+    private UrlGeneratorInterface $urlGenerator;
+    private string $sender;
 
     public function __construct(MailerInterface $mailer, UrlGeneratorInterface $urlGenerator, TranslatorInterface $translator, string $sender)
     {
@@ -45,6 +46,9 @@ class CommentNotificationSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * @throws TransportExceptionInterface
+     */
     public function onCommentCreated(CommentCreatedEvent $event): void
     {
         $comment = $event->getComment();

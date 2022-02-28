@@ -12,9 +12,11 @@
 namespace App\Entity;
 
 use DateTime;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use function Symfony\Component\String\u;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Uid\Uuid;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
@@ -33,11 +35,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Comment
 {
     /**
-     * @var int
-     *
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="doctrine.uuid_generator")
      */
     private $id;
 
@@ -57,7 +58,7 @@ class Comment
      * @Assert\Length(
      *     min=5,
      *     minMessage="comment.too_short",
-     *     max=10000,
+     *     max=5000,
      *     maxMessage="comment.too_long"
      * )
      */
@@ -70,18 +71,37 @@ class Comment
      */
     private DateTime $publishedAt;
 
-    /**
-     * @var User
-     *
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private User $author;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true, options={"default" = "submitted"})
      */
     private ?string $state = 'submitted';
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $author;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $email;
+
+    /**
+     * @ORM\Column(type="datetime_immutable", nullable=true)
+     */
+    private ?DateTimeImmutable $moderatedAt;
+
+    /**
+     * @ORM\OneToOne(targetEntity=User::class)
+     */
+    private ?User $moderatedBy;
+
+
+    /**
+     * @ORM\Column(type="datetime_immutable", nullable=true)
+     */
+    private ?DateTimeImmutable $moderatedNoticeAt;
 
     public function __construct()
     {
@@ -98,7 +118,7 @@ class Comment
         return !$containsInvalidCharacters;
     }
 
-    public function getId(): ?int
+    public function getId(): ?Uuid
     {
         return $this->id;
     }
@@ -123,16 +143,6 @@ class Comment
         $this->publishedAt = $publishedAt;
     }
 
-    public function getAuthor(): ?User
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(User $author): void
-    {
-        $this->author = $author;
-    }
-
     public function getPost(): ?Post
     {
         return $this->post;
@@ -151,6 +161,67 @@ class Comment
     public function setState(?string $state): self
     {
         $this->state = $state;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(string $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+
+    public function getModeratedAt(): ?DateTimeImmutable
+    {
+        return $this->moderatedAt;
+    }
+
+    public function setModeratedAt(?DateTimeImmutable $moderatedAt): self
+    {
+        $this->moderatedAt = $moderatedAt;
+
+        return $this;
+    }
+
+    public function getModeratedBy(): ?User
+    {
+        return $this->moderatedBy;
+    }
+
+    public function setModeratedBy(?User $moderatedBy): self
+    {
+        $this->moderatedBy = $moderatedBy;
+
+        return $this;
+    }
+
+    public function getModeratedNoticeAt(): ?DateTimeImmutable
+    {
+        return $this->moderatedNoticeAt;
+    }
+
+    public function setModeratedNoticeAt(?DateTimeImmutable $moderatedNoticeAt): self
+    {
+        $this->moderatedNoticeAt = $moderatedNoticeAt;
 
         return $this;
     }

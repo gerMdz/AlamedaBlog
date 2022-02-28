@@ -22,6 +22,23 @@
         {{ form_errors(form) }}
 
         <div class="form-group {% if not form.content.vars.valid %}has-error{% endif %}">
+            {{ form_label(form.author, 'label.author_comment') }}
+
+            {# Render any errors for the "content" field (e.g. when a class property constraint failed) #}
+            {{ form_errors(form.author) }}
+
+            {{ form_widget(form.author) }}
+            {{ form_help(form.author) }}
+
+            {{ form_label(form.email, 'label.author_email_comment') }}
+
+            {# Render any errors for the "content" field (e.g. when a class property constraint failed) #}
+            {{ form_errors(form.email) }}
+
+            {{ form_widget(form.email) }}
+            {{ form_help(form.email) }}
+
+
             {{ form_label(form.content, 'label.content', {label_attr: {class: 'sr-only'}}) }}
 
             {# Render any errors for the "content" field (e.g. when a class property constraint failed) #}
