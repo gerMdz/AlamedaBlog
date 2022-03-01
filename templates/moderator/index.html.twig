@@ -1,0 +1,45 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_moderator_index' %}
+
+{% block title %}{{ 'label.moderator'|trans}} index{% endblock %}
+
+{% block submain %}
+    <h1>{{ 'label.moderator'|trans}} {{ 'generic.index'|trans}}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+{#                <th>Id</th>#}
+                <th>{{ 'label.moderator'|trans}}</th>
+                <th class="text-center">{{ 'generic.active'|trans}}</th>
+                <th class="text-center"><i class="fa fa-cogs"> </i> </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for moderator in moderators %}
+            <tr>
+                <td>{{ moderator.person }}</td>
+                <td>{{ moderator.isActive ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_moderator_show', {'id': moderator.id}) }}">show</a>
+                    <a href="{{ path('app_moderator_edit', {'id': moderator.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">{{ 'generic.no_records_found'|trans}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+{% block sidebar %}
+<div class="section actions">
+    <a href="{{ path('app_moderator_new') }}" class="btn btn-lg btn-block btn-success">
+        <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.create_moderator'|trans}}
+    </a>
+</div>
+{% endblock %}

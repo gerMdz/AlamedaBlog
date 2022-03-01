@@ -1,0 +1,13 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_moderator_new' %}
+
+{% block title %}New {{ 'label.moderator'|trans}}{% endblock %}
+
+{% block submain %}
+    <h1>Create new Moderator</h1>
+
+    {{ include('moderator/_form.html.twig') }}
+
+    <a href="{{ path('app_moderator_index') }}">back to list</a>
+{% endblock %}

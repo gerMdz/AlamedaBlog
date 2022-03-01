@@ -1,0 +1,16 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_moderator_edit' %}
+
+
+{% block title %}Edit {{ 'label.moderator'|trans}}{% endblock %}
+
+{% block body %}
+    <h1>Edit Moderator</h1>
+
+    {{ include('moderator/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_moderator_index') }}">back to list</a>
+
+    {{ include('moderator/_delete_form.html.twig') }}
+{% endblock %}

@@ -86,6 +86,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private bool $isVerified = false;
 
+    public function __toString()
+    {
+        return $this->getFullName();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -164,7 +169,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getSalt(): ?string
     {
         // We're using bcrypt in security.yaml to encode the password, so
-        // the salt value is built-in and you don't have to generate one
+        // the salt value is 'built-in' and you don't have to generate one
         // See https://en.wikipedia.org/wiki/Bcrypt
 
         return null;

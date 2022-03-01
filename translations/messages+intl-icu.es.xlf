@@ -437,6 +437,26 @@
                 <source>menu.login</source>
                 <target>Acceder</target>
             </trans-unit>
+            <trans-unit id="label.moderator">
+                <source>label.moderator</source>
+                <target>Moderador</target>
+            </trans-unit>
+            <trans-unit id="generic.index">
+                <source>generic.index</source>
+                <target>Listado</target>
+            </trans-unit>
+            <trans-unit id="generic.active">
+                <source>generic.active</source>
+                <target>Activo</target>
+            </trans-unit>
+            <trans-unit id="generic.no_records_found">
+                <source>generic.no_records_found</source>
+                <target>No se encontraron resultados</target>
+            </trans-unit>
+            <trans-unit id="action.create_moderator">
+                <source>action.create_moderator</source>
+                <target>Agregar moderador</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
