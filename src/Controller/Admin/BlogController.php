@@ -12,6 +12,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Post;
+use App\Form\PostEditType;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use App\Security\PostVoter;
@@ -140,13 +141,12 @@ class BlogController extends AbstractController
      */
     public function edit(Request $request, Post $post, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(PostType::class, $post);
-        $form->handleRequest($request);
 
+        $form = $this->createForm(PostEditType::class, $post);
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
             $this->addFlash('success', 'post.updated_successfully');
-
             return $this->redirectToRoute('admin_post_edit', ['id' => $post->getId()]);
         }
 
