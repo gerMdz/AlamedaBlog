@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}{{ app.request.server.get('APP_SITE_NAME') }} {% endblock %}</title>
-    <meta name="description" content="{{ app.request.server.get('APP_SITE_NAME') }}">
+    <meta name="description" content="{{ app.request.server.get('APP_SITE_NAME') }}, {% block meta_description_content %} {% endblock %}">
     <meta name="keywords" content="{% block meta_keywords_content %} Alameda Blog {% endblock %}">
     <link rel="alternate" type="application/rss+xml" title="{{ 'rss.title'|trans }}" href="{{ path('blog_rss') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

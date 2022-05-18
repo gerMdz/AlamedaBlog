@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block meta_description_content %}{{ post.summary}} {% endblock %}
 {% block meta_keywords_content %}
 Opinión{% if not post.tags.empty %}{% for tag in post.tags %}, {{ tag.name }}{% endfor %}{% endif %}{% endblock %}
 {% block body_id 'blog_post_show' %}
