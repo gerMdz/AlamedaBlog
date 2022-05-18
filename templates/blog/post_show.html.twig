@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
-
+{% block meta_keywords_content %}
+Opinión{% if not post.tags.empty %}{% for tag in post.tags %}, {{ tag.name }}{% endfor %}{% endif %}{% endblock %}
 {% block body_id 'blog_post_show' %}
 
 {% block main %}
@@ -15,8 +16,8 @@
                 {#                <i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span> #}
                 <span class="metadata">
                     Por <a href="#"> {{ post.author.fullName }}</a> |
-{#                    <i class="fa fa-comments" aria-hidden="true"></i>#}
-{#                    {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }}#}
+{#                    <i class="fa fa-comments" aria-hidden="true"></i> #}
+                    {#                    {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }} #}
                 </span>
             </p>
             <div class="post-metadata">
@@ -46,10 +47,10 @@
             {#                {% endif %} #}
             {#            </div> #}
 
-{#            <h3>#}
-{#                <i class="fa fa-comments" aria-hidden="true"></i> #}
-{#                {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }}#}
-{#            </h3>#}
+            {#            <h3> #}
+            {#                <i class="fa fa-comments" aria-hidden="true"></i> #}
+            {#                {{ 'post.num_comments'|trans({ 'count': post.comments|length }) }} #}
+            {#            </h3> #}
 
             {% for comment in comments %}
                 <div class="row post-comment">
