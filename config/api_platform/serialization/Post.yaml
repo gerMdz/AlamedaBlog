@@ -1,0 +1,12 @@
+App\Entity\Post:
+  attributes:
+    title:
+      groups: [post_read]
+    slug:
+      groups: [post_read]
+    summary:
+      groups: [post_read]
+    author:
+      groups: [post_read]
+    imageFilename:
+      groups: [post_read]

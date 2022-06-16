@@ -17,6 +17,7 @@ use App\Entity\User;
 use App\Pagination\Paginator;
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\User\UserInterface;
 use function Symfony\Component\String\u;
@@ -117,6 +118,22 @@ class PostRepository extends ServiceEntityRepository
         }
 
         return (new Paginator($qb))->paginate($page);
+    }
+
+    /**
+     */
+    public function findLastPost()
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p.title, p.slug, p.imageFilename, p.summary, author.fullName')
+            ->join('p.author', 'author')
+            ->where('p.publishedAt <= :now')
+            ->orderBy('p.publishedAt', 'DESC')
+            ->setParameter('now', new DateTime())
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+            ;
     }
 
 }

@@ -36,6 +36,10 @@ services:
     App\EventSubscriber\CommentNotificationSubscriber:
         $sender: '%app.notifications.email_sender%'
 
+    App\Action\:
+        resource: '../src/Action'
+        tags: [ 'controller.service_arguments' ]
+
 when@test:
     services:
         test.user_password_hasher:
