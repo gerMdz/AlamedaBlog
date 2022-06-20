@@ -1,0 +1,40 @@
+App\Entity\Post:
+  attributes:
+    normalization_context:
+      groups: [post_read]
+  collectionOperations:
+    get_last_post:
+      method: GET
+      path: /post
+      controller: App\Action\Post\LastPost
+      deserialize: false
+      normalization_context:
+        groups: [post_read]
+      openapi_context:
+        summary: Lista el último post
+        responses:
+          200:
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    slug:
+                      type: string
+
+  itemOperations:
+    get:
+      method: GET
+      security: is_granted("post_read", object)
+
+#    put:
+#      method: PUT
+#      security: is_granted("ENLACE_UPDATE", object)
+#      denormalization_context:
+#        groups: [enlace_update]
+#    delete:
+#      method: DELETE
+#      security: is_granted("ENLACE_DELETE", object)
