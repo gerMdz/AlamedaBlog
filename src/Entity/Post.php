@@ -121,6 +121,16 @@ class Post
      */
     private ?string $imageFilename;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imageAuthor;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imageLinkOriginal;
+
     public function __construct()
     {
         $this->publishedAt = new DateTime();
@@ -245,5 +255,29 @@ class Post
     public function getImagePath(): ?string
     {
         return  $this->getImageFilename();
+    }
+
+    public function getImageAuthor(): ?string
+    {
+        return $this->imageAuthor;
+    }
+
+    public function setImageAuthor(?string $imageAuthor): self
+    {
+        $this->imageAuthor = $imageAuthor;
+
+        return $this;
+    }
+
+    public function getImageLinkOriginal(): ?string
+    {
+        return $this->imageLinkOriginal;
+    }
+
+    public function setImageLinkOriginal(?string $imageLinkOriginal): self
+    {
+        $this->imageLinkOriginal = $imageLinkOriginal;
+
+        return $this;
     }
 }

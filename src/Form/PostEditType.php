@@ -58,6 +58,14 @@ class PostEditType extends AbstractType
                     'class' => 'form-control'
                     ]
             ])
+            ->add('imageAuthor', TextType::class, [
+                    'label' => 'label.image_original_author'
+                ]
+            )
+            ->add('imageLinkOriginal', TextType::class, [
+                    'label' => 'label.image_original_link'
+                ]
+            )
             ->add('title', null, [
                 'attr' => ['autofocus' => true],
                 'label' => 'label.title',
