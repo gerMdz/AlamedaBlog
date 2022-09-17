@@ -63,15 +63,17 @@ class PostType extends AbstractType
                 'instance' => 'form',
                 'enable' => true,
                 'attr' => [
-                    'class' => 'form-control'
-                    ]
+                    'class' => 'form-control',
+                ],
             ])
             ->add('imageAuthor', TextType::class, [
-                'label' => 'label.image_original_author'
+                    'required' => false,
+                    'label' => 'label.image_original_author',
                 ]
             )
             ->add('imageLinkOriginal', TextType::class, [
-                'label' => 'label.image_original_link'
+                    'required' => false,
+                    'label' => 'label.image_original_link',
                 ]
             )
             ->add('title', null, [
@@ -90,8 +92,8 @@ class PostType extends AbstractType
                     'filebrowserBrowseRoute' => 'elfinder',
                     'filebrowserBrowseRouteParameters' => [
                         'instance' => 'default',
-                        'homeFolder' => ''
-                    ]
+                        'homeFolder' => '',
+                    ],
                 ],
             ])
             ->add('publishedAt', DateTimeType::class, [
