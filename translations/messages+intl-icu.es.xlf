@@ -129,6 +129,14 @@
                 <source>label.delete_post</source>
                 <target>Borrar artículo</target>
             </trans-unit>
+            <trans-unit id="label.image_original_link">
+                <source>label.image_original_link</source>
+                <target>Link original de la imagen</target>
+            </trans-unit>
+            <trans-unit id="label.image_original_author">
+                <source>label.image_original_author</source>
+                <target>Autor original de la imagen</target>
+            </trans-unit>
             <trans-unit id="label.cancel">
                 <source>label.cancel</source>
                 <target>Cancelar</target>
