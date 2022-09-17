@@ -59,10 +59,12 @@ class PostEditType extends AbstractType
                     ]
             ])
             ->add('imageAuthor', TextType::class, [
+                    'required' => false,
                     'label' => 'label.image_original_author'
                 ]
             )
             ->add('imageLinkOriginal', TextType::class, [
+                    'required' => false,
                     'label' => 'label.image_original_link'
                 ]
             )
