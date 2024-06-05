@@ -46,7 +46,7 @@
         "request": "^2.88.2",
         "resolve-url": "^0.2.1",
         "superagent": "^7.0.0",
-        "tar": "^6.1.11",
+        "tar": "^6.2.1",
         "trim-newlines": "^4.0.2",
         "urix": "^0.1.0",
         "uuid": "^8.3.2"
