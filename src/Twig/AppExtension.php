@@ -11,6 +11,8 @@
 
 namespace App\Twig;
 
+use App\Entity\Redes;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Intl\Locales;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
@@ -26,12 +28,18 @@ class AppExtension extends AbstractExtension
 {
     private $localeCodes;
     private $locales;
+    private EntityManagerInterface $em;
 
-    public function __construct(string $locales)
+    /**
+     * @param string $locales
+     * @param EntityManagerInterface $em
+     */
+    public function __construct(string $locales, EntityManagerInterface $em)
     {
         $localeCodes = explode('|', $locales);
         sort($localeCodes);
         $this->localeCodes = $localeCodes;
+        $this->em = $em;
     }
 
     /**
@@ -41,6 +49,7 @@ class AppExtension extends AbstractExtension
     {
         return [
             new TwigFunction('locales', [$this, 'getLocales']),
+            new TwigFunction('get_social_networks', [$this, 'getSocialNetworks']),
         ];
     }
 
@@ -62,4 +71,10 @@ class AppExtension extends AbstractExtension
 
         return $this->locales;
     }
+
+    public function getSocialNetworks(): array
+    {
+        return $this->em->getRepository(Redes::class)->findAll();
+    }
+
 }

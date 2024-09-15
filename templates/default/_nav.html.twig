@@ -4,7 +4,10 @@
             <a class="navbar-brand" href="{{ path('homepage') }}">
                 <img src="{{ asset('images/logo-con-nombre.png') }}" alt="Alameda Blog"
                      class="img-responsive img-fluid" style="height: 50px">
+                <span class="p-5"> {{app.request.server.get('APP_SITE_NAME') }}</span>
+
             </a>
+
             <button class="navbar-toggler blog-azul-toggler" type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbar-collapse-menu"
