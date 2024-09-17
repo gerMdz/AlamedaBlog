@@ -1,0 +1,24 @@
+@media (max-width: 480px) {
+  span.site_name {
+    font-size: clamp(12px, 2.5vw, 14px); /* ajusta el tamaño de fuente entre 12px y 14px según el ancho de la pantalla */
+    word-wrap: break-word; /* permite que las palabras se corten y pasen a la siguiente línea */
+    width: 100%; /* establece el ancho del span al 100% del contenedor padre */
+    white-space: normal; /* permite que las palabras se pongan una debajo de la otra */
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  span.site_name {
+    font-size: clamp(12px, 2.5vw, 14px); /* ajusta el tamaño de fuente entre 12px y 14px según el ancho de la pantalla */
+    word-wrap: break-word; /* permite que las palabras se corten y pasen a la siguiente línea */
+    width: 100%; /* establece el ancho del span al 100% del contenedor padre */
+    white-space: normal; /* permite que las palabras se pongan una debajo de la otra */
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  span.site_name {
+    font-size: clamp(12px, 8vw, 18px); /* ajusta el tamaño de fuente entre 12px y 14px según el ancho de la pantalla */
+    /*word-wrap: break-word; !* permite que las palabras se corten y pasen a la siguiente línea *!*/
+    width: 75%; /* establece el ancho del span al 100% del contenedor padre */
+    /*white-space: normal; !* permite que las palabras se pongan una debajo de la otra *!*/
+  }
+}
