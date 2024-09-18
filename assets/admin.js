@@ -1,52 +1,25 @@
 import './styles/admin.scss';
 import '@eonasdan/tempus-dominus';
 import 'typeahead.js';
-import Bloodhound from "bloodhound-js";
-import 'bootstrap-tagsinput';
 import $ from 'jquery';
+import 'select2';
+import 'select2/dist/css/select2.min.css';
+import 'select2-bootstrap-theme/dist/select2-bootstrap.min.css';
 
-$(function() {
-    // Datetime picker initialization.
-    // See https://eonasdan.github.io/bootstrap-datetimepicker/
-    $('[data-toggle="datetimepicker"]').TempusDominus({
-        icons: {
-            time: 'fa fa-clock-o',
-            date: 'fa fa-calendar',
-            up: 'fa fa-chevron-up',
-            down: 'fa fa-chevron-down',
-            previous: 'fa fa-chevron-left',
-            next: 'fa fa-chevron-right',
-            today: 'fa fa-check-circle-o',
-            clear: 'fa fa-trash',
-            close: 'fa fa-remove'
-        }
+$(document).ready(function() {
+    $('.select2').select2({
+        theme: 'bootstrap'
     });
 
-    // Bootstrap-tagsinput initialization
-    // https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/
-    var $input = $('input[data-toggle="tagsinput"]');
-    if ($input.length) {
-        var source = new Bloodhound({
-            local: $input.data('tags'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            datumTokenizer: Bloodhound.tokenizers.whitespace
-        });
-        source.initialize();
-
-        $input.tagsinput({
-            trimValue: true,
-            focusClass: 'focus',
-            typeaheadjs: {
-                name: 'tags',
-                source: source.ttAdapter()
-            }
-        });
-    }
+    $('.select2-tags').select2({
+        tags: true,
+        theme: 'classic'
+    });
 });
 
 // Handling the modal confirmation message.
 $(document).on('submit', 'form[data-confirmation]', function (event) {
-    var $form = $(this),
+    const $form = $(this),
         $confirm = $('#confirmationModal');
 
     if ($confirm.data('result') !== 'yes') {
