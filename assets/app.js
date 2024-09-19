@@ -4,7 +4,7 @@ import './styles/app.scss';
 // import 'bootstrap-sass/assets/javascripts/bootstrap/transition.js';
 
 // import $ from 'jquery';
-import 'bootstrap';
+
 // import './bootstrap';
 // import { Tooltip, Toast, Popover, Modal, Dropdown } from 'bootstrap';
 // import 'bootstrap/js/dist/alert';

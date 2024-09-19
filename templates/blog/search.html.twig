@@ -11,14 +11,16 @@
 <div class="row row-cols-1 row-cols-md-8 g-4 mt-5">
     <form action="{{ path('blog_search') }}" method="get">
         <div class="form-group">
-            <input name="q"
-                   class="form-control search-field"
-                   placeholder="{{ 'post.search_for'|trans }}"
-                   autocomplete="off"
-                   value="{{ query }}"
-                   autofocus
-                   data-no-results-message="{{ 'post.search_no_results'|trans }}"
-            >
+            <label>
+                <input name="q"
+                       class="form-control search-field"
+                       placeholder="{{ 'post.search_for'|trans }}"
+                       autocomplete="off"
+                       value="{{ query }}"
+                       autofocus
+                       data-no-results-message="{{ 'post.search_no_results'|trans }}"
+                >
+            </label>
         </div>
     </form>
 </div>

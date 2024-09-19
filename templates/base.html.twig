@@ -16,6 +16,7 @@
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('tags') }}
     {% endblock %}
     <style>
 
@@ -49,15 +50,35 @@
 <div class="container body-container">
     {% block body %}
         <div class="row mt-5">
-            <div id="main" class="col-sm-10 mx-auto p-3">
+            <div id="main" class="col-sm-10 mx-auto p-2">
 
 
                 {% block main %}{% endblock %}
             </div>
-            {% block sidebar %}
-                <div id="sidebar" class="col-sm-2">
-                </div>
-            {% endblock %}
+            <div id="sidebar" class="col-sm-2 mx-auto p-2">
+                {% block sidebar %}
+                    <div class="row row-cols-1 g-4 mt-5">
+                        <div class="card mx-0 px-0 mb-4">
+                            <div class="card-header w-100">Categorías</div>
+                            <div class="card-body">
+                                <div class="row">
+
+                                    <ul class="list-unstyled mb-0" id="tags">
+
+
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                {% endblock %}
+            </div>
         </div>
     {% endblock %}
 </div>
@@ -73,7 +94,7 @@
                 <div id="footer-resources" class="col-md-6">
                     <div style="display: flex; justify-content: flex-end; flex-direction: row;">
 
-                    {% for redSocial in get_social_networks() %}
+                        {% for redSocial in get_social_networks() %}
                             <a href="{{ redSocial.siteUrl }}" title="{{ redSocial.title }}"
                                target="_blank" style="text-decoration: none"
                             >
@@ -89,6 +110,11 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('tags') }}
+    <script type="text/javascript">
+        const GLOBAL_VAR_LOCALE = "{{ app.request.locale }}";
+    </script>
+
 {% endblock %}
 {{ 'now'|format_datetime('long', 'long', '', 'GMT-3', '', 'es') }}
 </body>
