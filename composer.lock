@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff90f8cfe23643d43454987a600a777f",
+    "content-hash": "95030bc7d9321edcb631d3f48ffc10bc",
     "packages": [
         {
             "name": "api-platform/core",
@@ -5327,20 +5327,20 @@
         },
         {
             "name": "symfony/mailer",
-            "version": "v5.4.12",
+            "version": "v5.4.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "076043af11e58b20a68d2fd93f59cdbc6e8fdd00"
+                "reference": "13f4fac7f8450381122f0f4cd750a63c2821c7fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/076043af11e58b20a68d2fd93f59cdbc6e8fdd00",
-                "reference": "076043af11e58b20a68d2fd93f59cdbc6e8fdd00",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/13f4fac7f8450381122f0f4cd750a63c2821c7fa",
+                "reference": "13f4fac7f8450381122f0f4cd750a63c2821c7fa",
                 "shasum": ""
             },
             "require": {
-                "egulias/email-validator": "^2.1.10|^3",
+                "egulias/email-validator": "^2.1.10|^3|^4",
                 "php": ">=7.2.5",
                 "psr/event-dispatcher": "^1",
                 "psr/log": "^1|^2|^3",
@@ -5354,7 +5354,7 @@
                 "symfony/http-kernel": "<4.4"
             },
             "require-dev": {
-                "symfony/http-client-contracts": "^1.1|^2|^3",
+                "symfony/http-client": "^4.4|^5.0|^6.0",
                 "symfony/messenger": "^4.4|^5.0|^6.0"
             },
             "type": "library",
@@ -5383,7 +5383,7 @@
             "description": "Helps sending emails",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/mailer/tree/v5.4.12"
+                "source": "https://github.com/symfony/mailer/tree/v5.4.41"
             },
             "funding": [
                 {
@@ -5399,7 +5399,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-03T05:17:26+00:00"
+            "time": "2024-06-27T20:38:52+00:00"
         },
         {
             "name": "symfony/messenger",
@@ -9138,35 +9138,32 @@
         },
         {
             "name": "symfonycasts/verify-email-bundle",
-            "version": "v1.11.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SymfonyCasts/verify-email-bundle.git",
-                "reference": "725b33d1cdeda35055d3dee61f0c84c76f6da9ae"
+                "reference": "10a11a69e658d9f0980eb2a330346ece44888123"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/725b33d1cdeda35055d3dee61f0c84c76f6da9ae",
-                "reference": "725b33d1cdeda35055d3dee61f0c84c76f6da9ae",
+                "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/10a11a69e658d9f0980eb2a330346ece44888123",
+                "reference": "10a11a69e658d9f0980eb2a330346ece44888123",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "php": ">=7.2.5",
-                "symfony/config": "^4.4 | ^5.0 | ^6.0",
-                "symfony/dependency-injection": "^4.4 | ^5.0 | ^6.0",
+                "symfony/config": "^5.4 | ^6.0 | ^7.0",
+                "symfony/dependency-injection": "^5.4 | ^6.0 | ^7.0",
                 "symfony/deprecation-contracts": "^2.2 | ^3.0",
-                "symfony/http-kernel": "^4.4 | ^5.0 | ^6.0",
-                "symfony/routing": "^4.4 | ^5.0 | ^6.0"
-            },
-            "conflict": {
-                "symfony/framework-bundle": "<4.4"
+                "symfony/http-kernel": "^5.4 | ^6.0 | ^7.0",
+                "symfony/routing": "^5.4 | ^6.0 | ^7.0"
             },
             "require-dev": {
                 "doctrine/orm": "^2.7",
                 "doctrine/persistence": "^2.0",
-                "symfony/framework-bundle": "^4.4 | ^5.0 | ^6.0",
-                "symfony/phpunit-bridge": "^5.0 | ^6.0",
-                "vimeo/psalm": "^4.3"
+                "symfony/framework-bundle": "^5.4 | ^6.0 | ^7.0",
+                "symfony/phpunit-bridge": "^5.4 | ^6.0 | ^7.0"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -9181,9 +9178,9 @@
             "description": "Simple, stylish Email Verification for Symfony",
             "support": {
                 "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
-                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.11.0"
+                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.15.0"
             },
-            "time": "2022-07-12T16:51:29+00:00"
+            "time": "2023-12-02T21:45:48+00:00"
         },
         {
             "name": "tgalopin/html-sanitizer",

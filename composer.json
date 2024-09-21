@@ -35,7 +35,7 @@
         "symfony/form": "^5.4",
         "symfony/framework-bundle": "^5.4",
         "symfony/intl": "^5.4",
-        "symfony/mailer": "^5.4",
+        "symfony/mailer": "5.4.*",
         "symfony/messenger": "5.4.*",
         "symfony/monolog-bundle": "^3.1",
         "symfony/notifier": "5.4.*",
@@ -54,11 +54,12 @@
         "symfony/webpack-encore-bundle": "^1.13",
         "symfony/workflow": "5.4.*",
         "symfony/yaml": "^5.4",
-        "symfonycasts/verify-email-bundle": "^1.7",
+        "symfonycasts/verify-email-bundle": "^1.15",
         "tgalopin/html-sanitizer-bundle": "^1.4",
         "twig/extra-bundle": "^3.0",
         "twig/intl-extra": "^3.0",
-        "twig/markdown-extra": "^3.0"
+        "twig/markdown-extra": "^3.0",
+      "ext-json": "*"
     },
     "require-dev": {
         "dama/doctrine-test-bundle": "^6.7",
@@ -78,7 +79,11 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
     },
     "autoload": {
         "psr-4": {

@@ -12,19 +12,16 @@
 namespace App\Form;
 
 use App\Entity\Post;
-use App\Form\Type\DateTimePickerType;
-use App\Form\Type\TagsInputType;
+use App\Entity\Tag;
 use FM\ElfinderBundle\Form\Type\ElFinderType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * Defines the form used to create and manipulate blog posts.
@@ -40,15 +37,6 @@ class PostEditType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        // For the full reference of options defined by each form field type
-        // see https://symfony.com/doc/current/reference/forms/types.html
-
-        // By default, form fields include the 'required' attribute, which enables
-        // the client-side form validation. This means that you can't test the
-        // server-side validation errors from the browser. To temporarily disable
-        // this validation, set the 'required' attribute to 'false':
-        // $builder->add('title', null, ['required' => false, ...]);
-
         $builder
             ->add('imageFilename', ElFinderType::class, [
                 'label' => 'label.image',
@@ -93,15 +81,20 @@ class PostEditType extends AbstractType
                     ]
                 ],
             ])
-            ->add('publishedAt', DateTimePickerType::class, [
+            ->add('publishedAt', DateTimeType::class, [
                 'label' => 'label.published_at',
                 'help' => 'help.post_publication',
                 'widget' => 'single_text',
                 'html5' => true,
             ])
-            ->add('tags', TagsInputType::class, [
+
+            ->add('tags', EntityType::class, [
                 'label' => 'label.tags',
+                'class' => Tag::class,
+                'multiple' => true,
+                'expanded' => false,
                 'required' => false,
+                'attr' => ['class' => 'select2-tags'],
             ])
             // No sacar el ';'
             ;

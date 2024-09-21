@@ -58,7 +58,7 @@
 
             <trans-unit id="title.homepage">
                 <source>title.homepage</source>
-                <target><![CDATA[Bienvenido/a a la aplicación <strong>Alameda Blog</strong>]]></target>
+                <target><![CDATA[Bienvenido/a. Esta es la aplicación <strong>Alameda Blog</strong>]]></target>
             </trans-unit>
             <trans-unit id="title.source_code">
                 <source>title.source_code</source>
@@ -91,6 +91,10 @@
             <trans-unit id="title.comment_error">
                 <source>title.comment_error</source>
                 <target>Se ha producido un error al publicar tu comentario</target>
+            </trans-unit>
+            <trans-unit id="title.change_password">
+                <source>title.change_password</source>
+                <target>Después de cambiar tu contraseña, serás desconectado de la aplicación.</target>
             </trans-unit>
 
             <trans-unit id="action.show">
@@ -298,7 +302,7 @@
             </trans-unit>
             <trans-unit id="help.browse_app">
                 <source>help.browse_app</source>
-                <target><![CDATA[Acceder a la <strong>parte pública</strong> de la aplicación de demostración.]]></target>
+                <target><![CDATA[Acceder a la <strong> aplicación</strong>.]]></target>
             </trans-unit>
             <trans-unit id="help.browse_admin">
                 <source>help.browse_admin</source>
@@ -374,7 +378,7 @@
             </trans-unit>
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Blog de Alameda Blog</target>
+                <target>Blog de </target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>
@@ -440,6 +444,22 @@
             <trans-unit id="menu.login">
                 <source>menu.login</source>
                 <target>Acceder</target>
+            </trans-unit>
+            <trans-unit id="info.change_password">
+                <source>info.change_password</source>
+                <target>Después de cambiar tu contraseña, serás desconectado de la aplicación.</target>
+            </trans-unit>
+            <trans-unit id="label.current_password">
+                <source>label.current_password</source>
+                <target>Clave actual</target>
+            </trans-unit>
+            <trans-unit id="label.new_password">
+                <source>label.new_password</source>
+                <target>Nueva clave</target>
+            </trans-unit>
+            <trans-unit id="label.new_password_confirm">
+                <source>label.new_password_confirm</source>
+                <target>Confirmar nueva clave</target>
             </trans-unit>
         </body>
     </file>

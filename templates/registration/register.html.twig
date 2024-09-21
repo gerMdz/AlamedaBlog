@@ -1,10 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
 
 {% block title %}{{ 'label.register'|trans }}{% endblock %}
 
 {% block main %}
+    <style>
+        .list-unstyled{
+            margin-bottom: 0;
+        }
+    </style>
     <div class="mt-5">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-12 g-4">
             {% for flashError in app.flashes('verify_email_error') %}
                 <div class="alert alert-danger" role="alert">{{ flashError }}</div>
             {% endfor %}
@@ -16,14 +21,32 @@
 
             {{ form_start(registrationForm) }}
 
-            {{ form_row(registrationForm.email) }}
+            {{ form_label(registrationForm.username) }}
+            {{ form_widget(registrationForm.username) }}
+            {% if (registrationForm.username.vars.errors | length) > 0 %}
+                <div class="alert alert-danger my-0">
+                    {{ form_errors(registrationForm.username) }}
+                </div>
+            {% endif %}
+            {{ form_label(registrationForm.email) }}
+            {{ form_widget(registrationForm.email) }}
+            {% if (registrationForm.email.vars.errors | length) > 0 %}
+                <div class="alert alert-danger my-0">
+                    {{ form_errors(registrationForm.email) }}
+                </div>
+            {% endif %}
             {{ form_row(registrationForm.fullName) }}
-            {{ form_row(registrationForm.password.first, {
-                label: 'Password'
-            }) }}
-            {{ form_row(registrationForm.password.second, {
-                label: 'Repita Password'
-            }) }}
+            {{ form_label(registrationForm.password.first)}}
+            {{ form_widget(registrationForm.password.first) }}
+            {{ form_label(registrationForm.password.second) }}
+            {{ form_widget(registrationForm.password.second) }}
+            {% if (registrationForm.password.second.vars.errors | length) > 0  or (registrationForm.password.first.vars.errors | length) > 0 %}
+                <div class="alert alert-danger my-0">
+                    {{ form_errors(registrationForm.password.second) }}
+                    {{ form_errors(registrationForm.password.first) }}
+                </div>
+            {% endif %}
+
             {{ form_row(registrationForm.agreeTerms) }}
 
             <button type="submit" class="btn btn-primary">{{ 'label.register'|trans }}</button>

@@ -1,10 +1,13 @@
 <nav class="navbar navbar-expand-lg fixed-top mt-0 pt-0">
     <div class="container-fluid bg-blog-azul">
-        <div class="navbar-header col-md-3 col-lg-2 ">
+        <div class="navbar-header col-sm-6 col-md-8 col-lg-2 ">
             <a class="navbar-brand" href="{{ path('homepage') }}">
                 <img src="{{ asset('images/logo-con-nombre.png') }}" alt="Alameda Blog"
                      class="img-responsive img-fluid" style="height: 50px">
+                <span class="site_name"> {{app.request.server.get('APP_SITE_NAME') }}</span>
+
             </a>
+
             <button class="navbar-toggler blog-azul-toggler" type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbar-collapse-menu"

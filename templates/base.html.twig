@@ -4,56 +4,81 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}{{ app.request.server.get('APP_SITE_NAME') }} {% endblock %}</title>
-    <meta name="description" content="{{ app.request.server.get('APP_SITE_NAME') }}, {% block meta_description_content %} {% endblock %}">
-    <meta name="keywords" content="{% block meta_keywords_content %} Alameda Blog {% endblock %}">
+    <meta name="description"
+          content="{{ app.request.server.get('APP_SITE_NAME') }}, {% block meta_description_content %} {% endblock %}">
+    <meta name="keywords"
+          content="{% block meta_keywords_content %} AlamedaBlog,{{ app.request.server.get('APP_SITE_NAME') }}  {% endblock %}">
     <link rel="alternate" type="application/rss+xml" title="{{ 'rss.title'|trans }}" href="{{ path('blog_rss') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/custom_alameda_blog.css') }}">
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('tags') }}
     {% endblock %}
     <style>
 
         .font-lato {
             font-family: 'Lato', sans-serif !important;
         }
+
         body {
-            font-family: "Lato",sans-serif; font-style: normal; font-weight: 100 !important;
+            font-family: "Lato", sans-serif;
+            font-style: normal;
+            font-weight: 100 !important;
         }
     </style>
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    {% include '_favicon.html.twig' %}
+
+
 </head>
 
-<body id="{% block body_id %}{% endblock %}" >
+<body id="{% block body_id %}{% endblock %}">
 
 {% block header %}
-{#    <header>#}
-        {% include 'default/_nav.html.twig' %}
-{#    </header>#}
+    {#    <header> #}
+    {% include 'default/_nav.html.twig' %}
+    {#    </header> #}
 {% endblock %}
+{# {% block errors %} #}
+{#    {{ include('default/_flash_messages.html.twig') }} #}
+{# {% endblock %} #}
 
 <div class="container body-container">
     {% block body %}
         <div class="row mt-5">
-            <div id="main" class="col-sm-10 mx-auto">
-                {{ include('default/_flash_messages.html.twig') }}
+            <div id="main" class="col-sm-10 mx-auto p-2">
+
 
                 {% block main %}{% endblock %}
             </div>
-                            {% block sidebar %}
-            <div id="sidebar" class="col-sm-2">
+            <div id="sidebar" class="col-sm-2 mx-auto p-2">
+                {% block sidebar %}
+                    <div class="row row-cols-1 g-4 mt-5">
+                        <div class="card mx-0 px-0 mb-4">
+                            <div class="card-header w-100">Categorías</div>
+                            <div class="card-body">
+                                <div class="row">
 
-                    {#                            {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', { #}
-                    {#                                'template': 'blog/about.html.twig', #}
-                    {#                                'sharedAge': 600, #}
-                    {#                                '_locale': app.request.locale #}
-                    {#                            })) }} #}
+                                    <ul class="list-unstyled mb-0" id="tags">
 
+
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                {% endblock %}
             </div>
-                            {% endblock %}
         </div>
     {% endblock %}
 </div>
@@ -63,17 +88,20 @@
         <div class="container">
             <div class="row">
                 <div id="footer-copyright" class="col-md-6">
-                    <i class="fa fa-copyright"></i> {{ 'now'|date('Y') }} - Alameda Blog
+                    <i class="fa fa-copyright"></i> {{ 'now'|date('Y') }}
+                    - {{ app.request.server.get('APP_SITE_NAME') }}
                 </div>
                 <div id="footer-resources" class="col-md-6">
-                    <p>
-                        <a href="https://www.facebook.com/IglesiaAlameda" title="Alameda Facebook">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                        {#                                <a href="https://alameda.ar/blog/" title="Alameda Blog"> #}
-                        {#                                    <i class="fa fa-rss" aria-hidden="true"></i> #}
-                        {#                                </a> #}
-                    </p>
+                    <div style="display: flex; justify-content: flex-end; flex-direction: row;">
+
+                        {% for redSocial in get_social_networks() %}
+                            <a href="{{ redSocial.siteUrl }}" title="{{ redSocial.title }}"
+                               target="_blank" style="text-decoration: none"
+                            >
+                                <i class="{{ redSocial.iconText }}" aria-hidden="true"></i>
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,11 +110,12 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
-{% endblock %}
+    {{ encore_entry_script_tags('tags') }}
+    <script type="text/javascript">
+        const GLOBAL_VAR_LOCALE = "{{ app.request.locale }}";
+    </script>
 
-{# it's not mandatory to set the timezone in localizeddate(). This is done to
-           avoid errors when the 'intl' PHP extension is not available and the application
-           is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
-<!-- Page rendered on {{ 'now'|format_datetime('long', 'long', '', 'UTC') }} -->
+{% endblock %}
+{{ 'now'|format_datetime('long', 'long', '', 'GMT-3', '', 'es') }}
 </body>
 </html>

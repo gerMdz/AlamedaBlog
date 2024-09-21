@@ -29,7 +29,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
- * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * @UniqueEntity(fields={"username"}, message="Ya existe una cuenta con este nombre de usuario.")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -106,7 +106,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->username;
     }
 
-    public function getUsername(): string
+    public function getUsername(): ?string
     {
         return $this->getUserIdentifier();
     }

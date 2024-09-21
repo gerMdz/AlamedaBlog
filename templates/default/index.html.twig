@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'default_index' %}
+
+{% block errors %}
+<div class="mt-5 p-5">
+    <div class="row row-cols-1 row-cols-md-12 g-4">
+    <div class="page-header">
+        <h1>{{ 'title.homepage'|trans|raw }}</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <div class="jumbotron mx-auto">
+
+                <p class="mx-auto">
+                    <a class="btn btn-primary btn-lg" href="{{ path('blog_index') }}">
+                        <i class="fa fa-users" aria-hidden="true"></i> {{ 'action.browse_app'|trans }}
+                    </a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="mt-5">
+            <div class="row row-cols-1 row-cols-md-12 g-4">
+                <div class="messages">
+
+                    {% for message in app.flashes('verify_email_error') %}
+                        <h1>hhh</h1>
+                        <div class="alert alert-danger" role="alert">
+                            {{ message }}</div>
+                    {% endfor %}
+
+                    {% for message in app.flashes('error') %}
+                        <h1>ttt</h1>
+                        <div class="alert alert-danger" role="alert">{{ message }}</div>
+                    {% endfor %}
+
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success" role="alert">{{ message }}</div>
+                        <h4>5555</h4>
+                    {% endfor %}
+                    {% if error is defined %}
+                        <h1>oppo</h1>
+                        <div class="alert alert-danger" role="alert">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+                    {% if success is defined %}
+                        <h1>ppp</h1>
+                        <div class="alert alert-danger" role="alert">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="messages">
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-dismissible alert-{{ type }} fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="{{ 'action.close'|trans }}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        {% for flashError in app.flashes('verify_email_success') %}
+            <div class="alert alert-success" role="alert">{{ flashError }}</div>
+        {% endfor %}
+
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+        {% for flashError in app.flashes() %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+
+    </div>
+    <div class="messages">
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-dismissible alert-{{ type }} fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="{{ 'action.close'|trans }}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    {% if verifyEmailError is defined %}
+        <div class="alert alert-danger" role="alert">
+            {{ verifyEmailError }}
+        </div>
+    {% endif %}
+
+    {% if error is defined %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}

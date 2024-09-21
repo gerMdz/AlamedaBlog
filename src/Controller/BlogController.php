@@ -70,9 +70,6 @@ class BlogController extends AbstractController
         }
         $latestPosts = $posts->findLatest($page, $tag, $autor);
 
-        // Every template name also has two extensions that specify the format and
-        // engine for that template.
-        // See https://symfony.com/doc/current/templates.html#template-naming
         return $this->render('blog/index.'.$_format.'.twig', [
             'paginator' => $latestPosts,
             'tagName' => $tag ? $tag->getName() : null,

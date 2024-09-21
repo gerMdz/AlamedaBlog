@@ -424,7 +424,7 @@
 
             <trans-unit id="rss.title">
                 <source>rss.title</source>
-                <target>Alameda Blog</target>
+                <target>Blog</target>
             </trans-unit>
             <trans-unit id="rss.description">
                 <source>rss.description</source>

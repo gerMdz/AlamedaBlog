@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Register;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -21,6 +21,10 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', TextType::class,[
                 'label'=>'label.email'
+            ])
+            ->add('username', TextType::class,[
+                'label'=>'label.username',
+                'attr' => ['class' => 'form-control'],
             ])
             ->add('fullName', TextType::class,[
                 'label'=>'label.fullname'
@@ -64,7 +68,7 @@ class RegistrationFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Register::class,
+            'data_class' => User::class,
         ]);
     }
 }

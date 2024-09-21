@@ -30,4 +30,16 @@ class TagRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Tag::class);
     }
+
+    public function getTagsActive()
+    {
+        return $this->createQueryBuilder('t')
+            ->select('t')
+            ->innerJoin('t.post', 'p')
+            ->groupBy('t')
+            ->having('COUNT(p) > 0')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }
