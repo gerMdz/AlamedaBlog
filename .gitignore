@@ -36,5 +36,7 @@ public/build
 
 
 public/uploads/images/*.png
+public/uploads/images/*.jpg
+public/uploads/images/*.ico
 public/uploads/images/favicons/*.png
 public/uploads/images/.tmb/
