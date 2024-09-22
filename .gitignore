@@ -33,3 +33,7 @@ public/build
 ###< liip/imagine-bundle ###
 /data/sugerencias.composer.install.txt
 /data/next_registration.txt
+
+
+public/uploads/images/*.png
+public/uploads/images/favicons/*.png
