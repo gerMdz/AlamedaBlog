@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Tag{% endblock %}
+
+{% block main %}
+    <h4>{{ 'label.edit_tag'|trans }} '{{ tag.name }}' </h4>
+
+    {{ include('admin/tag/_form.html.twig', {'button_label': 'action.save'|trans  } ) }}
+
+    <a class="btn btn-sm btn-link" href="{{ path('app_tag_index') }}">{{ 'label.back_to_list'|trans }}</a>
+
+    {{ include('admin/tag/_delete_form.html.twig') }}
+{% endblock %}

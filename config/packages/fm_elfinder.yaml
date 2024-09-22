@@ -14,7 +14,7 @@ fm_elfinder:
                         show_hidden: false
                         driver: LocalFileSystem
                         path: uploads/images
-                        upload_allow: [ 'image/png', 'image/jpg', 'image/jpeg' ]
+                        upload_allow: ['image/png', 'image/jpg', 'image/jpeg', 'image/ico', 'application/zip']
                         upload_deny: [ 'all' ]
                         upload_max_size: 2M
                         url: '%env(APP_URL_IMAGES)%'
@@ -29,7 +29,7 @@ fm_elfinder:
                         show_hidden: false # defaults to false
                         driver: LocalFileSystem
                         path: uploads/images
-                        upload_allow: [ 'image/png', 'image/jpg', 'image/jpeg' ]
+                        upload_allow: ['image/png', 'image/jpg', 'image/jpeg', 'image/x-icon','image/ico', 'application/zip']
                         upload_deny: [ 'all' ]
                         upload_max_size: 2M
                         url: '%env(APP_URL_IMAGES)%'

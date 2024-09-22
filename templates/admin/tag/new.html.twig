@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tag{% endblock %}
+
+{% block main %}
+    <h4>{{ 'label.create_tag'|trans }}  </h4>
+
+    {{ include('admin/tag/_form.html.twig') }}
+
+    <a href="{{ path('app_tag_index') }}">{{ 'label.back_to_list'|trans }}</a>
+{% endblock %}

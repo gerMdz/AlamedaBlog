@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('app_tag_delete', {'id': tag.id}) }}"
+      onsubmit="return confirm(`{{ 'action.delete_tag'|trans }}`);">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ tag.id) }}">
+    <button class="btn btn-danger">{{ 'label.delete_tag'|trans }} </button>
+</form>

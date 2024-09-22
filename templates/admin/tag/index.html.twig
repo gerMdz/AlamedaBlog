@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tag index{% endblock %}
+
+{% block body %}
+    <h1>Tag index</h1>
+
+    <table class="table">
+        <thead>
+            <tr class="text-left">
+                <th>Id</th>
+                <th>{{ 'label.name_tag'| trans }}</th>
+                <th><i class="fa fa-cogs"></i> </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tag in tags %}
+            <tr>
+                <td>{{ tag.id }}</td>
+                <td>{{ tag.name }}</td>
+                <td>
+                    <a href="{{ path('app_tag_show', {'id': tag.id}) }}" class="btn btn-info  btn-sm">
+                        {{ 'action.show'|trans }}
+                    </a>
+                    <a href="{{ path('app_tag_edit', {'id': tag.id}) }}" class="btn btn-primary btn-sm">
+                        {{ 'action.edit'| trans }}
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">{{ 'label.not_results_found'|trans }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary btn-sm" href="{{ path('app_tag_new') }}">{{ 'label.create_new'|trans }}</a>
+{% endblock %}

@@ -4,11 +4,11 @@
 
 {% block submain %}
     <h1>{{ 'title.post_list'|trans }}</h1>
-    <div class="small">
-        <a href="{{ path('admin_post_new') }}" class="btn btn-xs btn-success float-end">
-            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.create_post'|trans }}
-        </a>
-    </div>
+{#    <div class="small">#}
+{#        <a href="{{ path('admin_post_new') }}" class="btn btn-xs btn-success float-end">#}
+{#            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.create_post'|trans }}#}
+{#        </a>#}
+{#    </div>#}
 
     <table class="table table-striped table-middle-aligned">
         <thead>
@@ -49,9 +49,15 @@
 {% endblock %}
 
 {% block sidebar %}
-    <div class="section actions">
-        <a href="{{ path('admin_post_new') }}" class="btn btn-lg btn-block btn-success">
+    <div class="section actions row me-1 mt-5">
+        <a href="{{ path('admin_post_new') }}" class="btn btn-sm btn-block btn-primary mb-1">
             <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.create_post'|trans }}
+        </a>
+        <a href="{{ path('app_tag_index') }}" class="btn btn-sm btn-block btn-primary mb-1">
+            <i class="fa fa-tags" aria-hidden="true"></i> {{ 'label.tags'|trans }}
+        </a>
+        <a href="{{ path('app_admin_file-upload_new') }}" class="btn btn-sm btn-block btn-primary mb-1">
+            <i class="fa fa-upload" aria-hidden="true"></i> Imágenes
         </a>
     </div>
     {% if paginator.hasToPaginate %}

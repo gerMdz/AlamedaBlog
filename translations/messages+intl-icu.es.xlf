@@ -147,7 +147,27 @@
             </trans-unit>
             <trans-unit id="action.create_post">
                 <source>action.create_post</source>
-                <target>Crear un nuevo artículo</target>
+                <target>Crear artículo</target>
+            </trans-unit>
+            <trans-unit id="action.delete_tag">
+                <source>action.delete_tag</source>
+                <target>¿Está seguro de que quiere borrar esta etiqueta?</target>
+            </trans-unit>
+            <trans-unit id="label.name_tag">
+                <source>label.name_tag</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="label.delete_tag">
+                <source>label.delete_tag</source>
+                <target>Borrar</target>
+            </trans-unit>
+            <trans-unit id="action.create_tag">
+                <source>action.create_tag</source>
+                <target>Guardar</target>
+                </trans-unit>
+             <trans-unit id="label.create_tag">
+                <source>label.create_tag</source>
+                <target>Nueva etiqueta</target>
             </trans-unit>
             <trans-unit id="label.create_post">
                 <source>label.create_post</source>
@@ -156,6 +176,14 @@
             <trans-unit id="label.save_and_create_new">
                 <source>label.save_and_create_new</source>
                 <target>Guardar artículo y crear otro</target>
+            </trans-unit>
+             <trans-unit id="label.create_new">
+                <source>label.create_new</source>
+                <target>Agregar</target>
+            </trans-unit>
+            <trans-unit id="label.back_to_list">
+                <source>label.back_to_list</source>
+                <target>Volver al listado</target>
             </trans-unit>
             <trans-unit id="action.back_to_list">
                 <source>action.back_to_list</source>
@@ -229,6 +257,14 @@
                 <source>label.tags</source>
                 <target>Etiquetas</target>
             </trans-unit>
+             <trans-unit id="label.tag">
+                <source>label.tags</source>
+                <target>Etiquetas</target>
+            </trans-unit>
+            <trans-unit id="label.edit_tag">
+                <source>label.edit_tag</source>
+                <target>Editar etiqueta</target>
+            </trans-unit>
             <trans-unit id="label.actions">
                 <source>label.actions</source>
                 <target>Acciones</target>
@@ -236,6 +272,10 @@
             <trans-unit id="title.post_new">
                 <source>title.post_new</source>
                 <target>Nuevo artículo</target>
+            </trans-unit>
+             <trans-unit id="title.file_upload_new">
+                <source>title.file_upload_new</source>
+                <target>Cargar imagen</target>
             </trans-unit>
             <trans-unit id="action.edit_contents">
                 <source>action.edit_contents</source>
@@ -290,6 +330,10 @@
             <trans-unit id="post.no_posts_found">
                 <source>post.no_posts_found</source>
                 <target>No se ha encontrado ningún artículo.</target>
+            </trans-unit>
+            <trans-unit id="label.not_results_found">
+                <source>label.not_results_found</source>
+                <target>No se han encontrado resultados.</target>
             </trans-unit>
 
             <trans-unit id="help.app_description">
@@ -351,6 +395,10 @@
             <trans-unit id="post.created_successfully">
                 <source>post.created_successfully</source>
                 <target>¡Artículo creado con éxito!</target>
+            </trans-unit>
+             <trans-unit id="file_upload.created_successfully">
+                <source>file_upload.created_successfully</source>
+                <target>¡Imagen cargada con éxito!</target>
             </trans-unit>
             <trans-unit id="post.updated_successfully">
                 <source>post.updated_successfully</source>
