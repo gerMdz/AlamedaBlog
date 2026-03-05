@@ -47,7 +47,7 @@
         "select2": "^4.1.0-rc.0",
         "select2-bootstrap-theme": "^0.1.0-beta.10",
         "superagent": "^7.0.0",
-        "tar": "^6.2.1",
+        "tar": "^7.5.10",
         "trim-newlines": "^4.0.2",
         "urix": "^0.1.0",
         "uuid": "^8.3.2"
