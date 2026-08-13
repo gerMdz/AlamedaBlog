@@ -5930,10 +5930,10 @@ tar@^6.0.2, tar@^6.1.2:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tar@^7.5.11:
-  version "7.5.11"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.11.tgz#1250fae45d98806b36d703b30973fa8e0a6d8868"
-  integrity sha512-ChjMH33/KetonMTAtpYdgUFr0tbz69Fp2v7zWxQfYZX4g5ZN2nOBXm1R2xyA+lMIKrLKIoKAwFj93jE/avX9cQ==
+tar@^7.5.21:
+  version "7.5.21"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.21.tgz#b3405af2eb493523ce4379f531e9ebda0601bc59"
+  integrity sha512-XdhtCvlMywwxpCW8YEq3lOXBJpUPTR2OHHcwLPO3HwsJqOHa2Ok/oJ7ruGzp+JrKoRPVCzJwAdEjqLW/vNRPHA==
   dependencies:
     "@isaacs/fs-minipass" "^4.0.0"
     chownr "^3.0.0"
